@@ -15,7 +15,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="backdrop-blur-xl bg-white shadow-sm border-b border-gray-50 fixed top-0 left-0 w-full pt-2 z-50 ">
+    <header className="backdrop-blur-xl bg-white shadow-sm border-b border-gray-50 fixed top-0 left-0 w-full pt-2 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -33,7 +33,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden sm:flex items-center space-x-8">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
@@ -53,7 +53,7 @@ export default function Navbar() {
           </nav>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="sm:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-black p-2"
@@ -65,7 +65,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-100">
+          <div className="sm:hidden border-t border-gray-100">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navigationItems.map((item) => (
                 <Link

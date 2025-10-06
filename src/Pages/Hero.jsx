@@ -7,7 +7,7 @@ const Hero = () => {
         {/* left Image */}
         <div className="lg:flex lg:gap-x-8">
           <img
-            className="rounded-2xl lg:shadow-gray-700 shadow-gray-500 shadow-lg lg:shadow-xl sm:w-full lg:w-fit"
+            className="rounded-2xl lg:shadow-gray-700 shadow-gray-500 shadow-lg lg:shadow-xl sm:w-full lg:w-1/2"
             src="https://media.istockphoto.com/id/184104512/photo/man-at-work-20-series.jpg?s=612x612&w=0&k=20&c=XtXxqjAQbvkcug__P8bn63g_ZZouTil0wJBuKAvLvhY="
             alt=""
           />
