@@ -27,13 +27,13 @@ export default function Navbar() {
                 className="h-16 w-16 rounded-sm"
               />
               <div className="">
-              <h1 className="poppins-black text-[#0B4D91]  lg:block">CLIMADE PAINTS</h1>
+              <h1 className="poppins-black text-[#0B4D91] hidden lg:block">CLIMADE PAINTS</h1>
               </div>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden sm:flex items-center space-x-8">
+          <nav className="hidden sm:flex items-center space-x-8 justify-items-center">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
