@@ -33,14 +33,16 @@ const OurServices = () => {
   ];
   return (
     <>
-      <section className="justify-items-center">
+      <section>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <h1 className="poppins-black text-2xl">Our Services</h1>
+          <div className="text-center">
+          <h1 className="poppins-black text-2xl text-[#0B4D91]">Our Services</h1>
           <p className="text-sm mt-2 mb-1">
             Interior, exterior, and specialty coatings delivered with precision
             and care.
           </p>
-          <div className="gap-6 lg:gap-8 grid grid-cols-1 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:w-[1120px] rounded-[12px] p-1">
+            </div>
+          <div className="gap-6 lg:gap-16 grid grid-cols-1 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:w-[1120px] rounded-[12px] p-1">
             {serviceListings.map((service) => (
               <div key={service.id} className="border-2 lg:w-[268px] lg:h-[253px] rounded-lg border-[#E6E8EA]">
                 <img
@@ -49,14 +51,16 @@ const OurServices = () => {
                   className="lg:w-[266px] lg:h-[140px] rounded-t-lg"
                 />
                 <div className="p-2 gap-y-8">
-                  <h1 className="h-[20px] inter-bold">{service.heading}</h1>
-                  <p className="poppins-light">{service.text}</p>
+                  <h1 className="h-[20px] inter-bold text-[#0B4D91]">{service.heading}</h1>
+                  <p className="poppins-regular-italic">{service.text}</p>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+            <hr className="border-t-2 border-[#E6E8EA]"/>
+
     </>
   );
 };

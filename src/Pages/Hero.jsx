@@ -3,16 +3,16 @@ import React from "react";
 const Hero = () => {
   return (
     <>
-      <section className="grid grid-cols-1 lg-grid-cols-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 justify-items-center">
+      <section className="grid grid-cols-1 md-grid-cols-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center">
         {/* left Image */}
-        <div className="lg:flex lg:gap-x-8">
+        <div className="md:flex md:gap-x-8">
           <img
-            className="rounded-2xl lg:shadow-gray-700 shadow-gray-500 shadow-lg lg:shadow-xl sm:w-full lg:w-1/2"
+            className="rounded-2xl lg:shadow-gray-700 shadow-gray-500 shadow-lg lg:shadow-xl sm:w-full md:w-1/2"
             src="https://media.istockphoto.com/id/184104512/photo/man-at-work-20-series.jpg?s=612x612&w=0&k=20&c=XtXxqjAQbvkcug__P8bn63g_ZZouTil0wJBuKAvLvhY="
             alt=""
           />
           <div className="lg:my-16 lg:h-[272px]  lg:w-[472.73px] sm:space-y-2">
-            <h1 className="inter-bold text-2xl sm:text-3xl lg:text-4xl mt-2 lg:mt-0">
+            <h1 className="inter-bold text-2xl sm:text-3xl lg:text-4xl mt-2 lg:mt-0 text-[#0B4D91]">
               Premium Residential & Commercial Painting
             </h1>
             <p className="inter-light text-base font-bold lg:w-[433.23px]">

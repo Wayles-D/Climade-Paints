@@ -48,9 +48,7 @@ export default function Navbar() {
               to="/quote"
               className="ml-4 px-4 py-2 rounded-xl  bg-[#0B4D91] font-semibold shadow text-white hover:text-gray-200 md:ml-0"
             >
-              <p className="">
               Get a Quote
-              </p>
             </Link>
           </nav>
 
