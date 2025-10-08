@@ -24,7 +24,7 @@ export default function Navbar() {
               <img
                 src="https://res.cloudinary.com/dmb5ggmvg/image/upload/v1759492178/WhatsApp_Image_2025-10-03_at_12.49.12_3505a48c_ovx9ud.jpg"
                 alt="Brand-logo"
-                className="h-16 w-16 rounded-sm"
+                className="md:w- h-16 w-16 rounded-sm"
               />
               <div className="">
               <h1 className="poppins-black text-[#0B4D91] hidden lg:block">CLIMADE PAINTS</h1>
@@ -33,7 +33,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden sm:flex items-center space-x-8 justify-items-center">
+          <nav className="hidden md:flex items-center space-x-8 justify-items-center">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
@@ -46,14 +46,16 @@ export default function Navbar() {
             {/* Get a quote button */}
             <Link
               to="/quote"
-              className="ml-4 px-4 py-2 rounded-xl  bg-[#0B4D91] font-semibold shadow text-white hover:text-gray-200 h"
+              className="ml-4 px-4 py-2 rounded-xl  bg-[#0B4D91] font-semibold shadow text-white hover:text-gray-200 md:ml-0"
             >
+              <p className="">
               Get a Quote
+              </p>
             </Link>
           </nav>
 
           {/* Mobile menu button */}
-          <div className="sm:hidden">
+          <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-black p-2"
