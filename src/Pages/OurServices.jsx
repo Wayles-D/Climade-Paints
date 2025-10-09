@@ -34,7 +34,7 @@ const OurServices = () => {
   return (
     <>
       <section>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
           <div className="text-center">
           <h1 className="poppins-black text-2xl text-[#0B4D91]">Our Services</h1>
           <p className="text-sm mt-2 mb-1">
@@ -42,20 +42,22 @@ const OurServices = () => {
             and care.
           </p>
             </div>
-          <div className="gap-6 lg:gap-16 grid grid-cols-1 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:w-[1120px] rounded-[12px] p-1">
+            <div className="justify-items-center lg:w-full">
+          <div className="gap-6 grid grid-cols-1 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4  rounded-[12px] p-1">
             {serviceListings.map((service) => (
-              <div key={service.id} className="border-2 lg:w-[268px] lg:h-[253px] rounded-lg border-[#E6E8EA]">
+              <div key={service.id} className="border-2 lg:w-full  rounded-lg border-[#E6E8EA]">
                 <img
                   src={service.image}
                   alt=""
-                  className="lg:w-[266px] lg:h-[140px] rounded-t-lg"
+                  className="lg:w-full lg:h-1/2 rounded-t-lg"
                 />
-                <div className="p-2 gap-y-8">
+                <div className="p-2 space-y-2">
                   <h1 className="h-[20px] inter-bold text-[#0B4D91]">{service.heading}</h1>
-                  <p className="poppins-regular-italic">{service.text}</p>
+                  <p className="lora-normal">{service.text}</p>
                 </div>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </section>

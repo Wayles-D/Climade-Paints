@@ -24,17 +24,17 @@ const FeaturedProjects = () => {
   return (
     <>
       <section>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 ">
-          <div className="text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 ">
+          <div className="text-center space-y-4">
             <h1 className="text-2xl poppins-black text-[#0B4D91]">
               Featured Projects
             </h1>
-            <p className="text-sm mt-2 mb-1 inter-bold">
+            <p className="text-sm mt-2 mb-1">
               Before and after highlights from recent jobs.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:gap-9">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-x-9">
             {beforeAfterSliders.map((slider) => (
               <div key={slider.id}>
                 <div className="lg:h-[] rounded-xl border-2  border-[#E6E8EA]">
@@ -42,7 +42,10 @@ const FeaturedProjects = () => {
                     <h2 className="text-black">{slider.tag}</h2>
                     <img className="h-5 w-5" src={arrowY} alt="xvxvxv" />
                   </div>
-                  <figure className="diff aspect-16/9 rounded-b-xl" tabIndex={0}>
+                  <figure
+                    className="diff aspect-16/9 rounded-b-xl"
+                    tabIndex={0}
+                  >
                     <div className="diff-item-1" role="img" tabIndex={0}>
                       <img
                         src={slider.beforeImage}
@@ -60,6 +63,15 @@ const FeaturedProjects = () => {
                 </div>
               </div>
             ))}
+          </div>
+          {/* Centered buttons below the grid */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+            <button className="px-6 py-2 rounded-lg bg-[#0B4D91] text-white font-semibold shadow hover:bg-[#093a6c]">
+              See Full Portfolio
+            </button>
+            <button className="px-6 py-2 rounded-lg bg-[#F2F5F4] text-[#0B4D91] font-semibold shadow border border-[#E6E8EA] hover:bg-[#e6e8ea]">
+              Request Estimate
+            </button>
           </div>
         </div>
       </section>
