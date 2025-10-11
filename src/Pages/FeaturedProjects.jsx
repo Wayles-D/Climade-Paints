@@ -1,7 +1,15 @@
 import React from "react";
 import arrowY from "../assets/SVG.svg";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const FeaturedProjects = () => {
+
+   useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   const beforeAfterSliders = [
     {
       id: 1,
@@ -25,6 +33,7 @@ const FeaturedProjects = () => {
     <>
       <section>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 bg-[#6b9fd054]">
+          <div data-aos="zoom-in">
           <div className="text-center space-y-4">
             <h1 className="text-2xl poppins-black text-[#0B4D91]">
               Featured Projects
@@ -74,8 +83,10 @@ const FeaturedProjects = () => {
             </button>
           </div>
         </div>
+        </div>
       </section>
-      <hr className="border-t-2 border-[#E6E8EA]" />
+            <hr className="border-t-2 border-[#7288cfb8]"/>
+
     </>
   );
 };

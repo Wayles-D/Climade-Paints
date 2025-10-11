@@ -1,17 +1,24 @@
 import React from "react";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Hero = () => {
+
+   useEffect(() => {
+      AOS.init({ duration: 1000 });
+    }, []);
   return (
     <>
       <section className="grid grid-cols-1 md-grid-cols-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#accbea5b]">
         {/* left Image */}
         <div className="md:flex md:gap-x-8">
           <img
-            className="rounded-2xl lg:shadow-gray-700 shadow-gray-500 shadow-lg lg:shadow-xl sm:w-full md:w-1/2"
+            className="rounded-2xl lg:shadow-gray-700 shadow-gray-500 shadow-lg lg:shadow-xl sm:w-full md:w-1/2 animate__animated animate__backInLeft"
             src="https://media.istockphoto.com/id/184104512/photo/man-at-work-20-series.jpg?s=612x612&w=0&k=20&c=XtXxqjAQbvkcug__P8bn63g_ZZouTil0wJBuKAvLvhY="
             alt=""
           />
-          <div className="lg:my-16 lg:h-[272px]  md:w-[472.73px] sm:space-y-2">
+          <div className="lg:my-16 lg:h-[272px]  md:w-[472.73px] sm:space-y-2 animate__animated animate__backInRight">
             <h1 className="inter-bold text-2xl sm:text-3xl lg:text-4xl mt-2 lg:mt-0 text-[#0B4D91]">
               Premium Residential & Commercial Painting
             </h1>
@@ -33,7 +40,7 @@ const Hero = () => {
 
         </div>
       </section>
-      <hr className="border-t-2 border-[#536ec6db]"/>
+      <hr className="border-t-2 border-[#7288cfb8]"/>
     </>
   );
 };
