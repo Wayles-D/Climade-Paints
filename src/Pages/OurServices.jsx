@@ -45,7 +45,7 @@ const OurServices = () => {
             <div className="justify-items-center lg:w-full">
           <div className="gap-6 grid grid-cols-1 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4  rounded-[12px] p-1">
             {serviceListings.map((service) => (
-              <div key={service.id} className="border-2 lg:w-full  rounded-lg border-[#E6E8EA]">
+              <div key={service.id} className="border-2 lg:w-full  rounded-lg border-[#536ec6db] shadow-lg shadow-gray-500">
                 <img
                   src={service.image}
                   alt=""
@@ -61,7 +61,7 @@ const OurServices = () => {
           </div>
         </div>
       </section>
-            <hr className="border-t-2 border-[#E6E8EA]"/>
+            <hr className="border-t-2 border-[#536ec6db]"/>
 
     </>
   );

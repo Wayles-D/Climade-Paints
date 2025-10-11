@@ -18,10 +18,42 @@ const About = () => {
         "Low-VOC, durable coatings matched to your surfaces and climate for long-lasting finishes. We use premium products that protect, perform, and preserve your space, without compromising air quality or appearance.",
     },
   ];
+  const byTheNumbersCard = [
+    { id: "1",
+      cardTitle: "12+",
+      cardText:
+        "Years in Business",
+    },
+    { id: "2",
+      cardTitle: "1200+",
+      cardText: "Projects Completed",
+    },
+    { id: "3",
+      cardTitle: "100%",
+      cardText:
+        "Insured and bonded",
+    },
+  ];
+  const values = [
+    { id: "1",
+      cardTitle: "Craftsmanship",
+      cardText:
+        "Surface prep, priming, and application techniques that stand up to scrutiny.",
+    },
+    { id: "2",
+      cardTitle: "Communication",
+      cardText: "Clear expectations, daily updates, and post-job walkthroughs.",
+    },
+    { id: "3",
+      cardTitle: "Integrity",
+      cardText:
+        "Transparent pricing, reliable timelines, and tidy work sites.",
+    },
+  ];
   return (
     <>
-      <section>
         <section className="grid grid-cols-1 md-grid-cols-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#dea8aa7d]">
+      <div>
           {/* left Image */}
           <div className="md:flex md:gap-x-8">
             <img
@@ -38,11 +70,11 @@ const About = () => {
               </p>
             </div>
           </div>
-        </section>
-        <hr className="border-t-2 border-[#CC323A]" />
+        </div>
       </section>
+        <hr className="border-t-2 border-[#ef7d83c1]" />
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#dea8aaa5]">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28  bg-[#dea8aaa5]">
         <div className="text-center">
           <h1 className="poppins-black text-2xl text-[#CC323A]">Who We Are</h1>
           <h2>
@@ -60,6 +92,45 @@ const About = () => {
             ))}
         </div>
       </section>
+       <hr className="border-t-2 border-[#ef7d83c1]" />
+
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28  bg-[#dea8aa74]">
+        <div className="text-center ">
+          <h1 className="poppins-black text-2xl text-[#CC323A]">By The Numbers</h1>
+          <h2>
+            Proven delivery at scale.
+          </h2>
+        </div>
+
+        <div className=" mt-2 grid  grid-cols-1 md:grid-cols-3 gap-6">
+            {byTheNumbersCard.map((byn) => (
+                <div key={byn.id} className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:">
+                    <h1 className="poppins-black text-[#CC323A]">{byn.cardTitle}</h1>
+                    <p className="lora-normal text-gray-950">{byn.cardText}</p>
+                </div>
+            ))}
+        </div>
+        </section>
+         <hr className="border-t-2 border-[#ef7d83c1]" />
+
+        {/* Our Values Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28  bg-[#dea8aa74]">
+        <div className="text-center ">
+          <h1 className="poppins-black text-2xl text-[#CC323A]">Our Values</h1>
+          <h2>
+            Principles that guide every project.
+          </h2>
+        </div>
+
+        <div className=" mt-2 grid  grid-cols-1 md:grid-cols-3 gap-6">
+            {values.map((value) => (
+                <div key={value.id} className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:">
+                    <h1 className="poppins-black text-[#CC323A]">{value.cardTitle}</h1>
+                    <p className="lora-normal text-gray-950">{value.cardText}</p>
+                </div>
+            ))}
+        </div>
+        </section>
     </>
   );
 };

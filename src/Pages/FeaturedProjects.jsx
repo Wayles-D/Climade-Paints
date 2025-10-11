@@ -37,7 +37,7 @@ const FeaturedProjects = () => {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:gap-x-9">
             {beforeAfterSliders.map((slider) => (
               <div key={slider.id}>
-                <div className="lg:h-[] rounded-xl border-2 bg-white border-[#E6E8EA]">
+                <div className="lg:h-[] rounded-xl border-2 bg-white border-[#536ec668] shadow-xl shadow-gray-500">
                   <div className="flex rounded-t-xl h-7 justify-between m-2 p-1">
                     <h2 className="text-black">{slider.tag}</h2>
                     <img className="h-5 w-5" src={arrowY} alt="xvxvxv" />

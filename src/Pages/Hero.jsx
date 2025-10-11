@@ -33,7 +33,7 @@ const Hero = () => {
 
         </div>
       </section>
-      <hr className="border-t-2 border-[#E6E8EA]"/>
+      <hr className="border-t-2 border-[#536ec6db]"/>
     </>
   );
 };
