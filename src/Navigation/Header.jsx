@@ -7,11 +7,11 @@ export default function Navbar() {
 
   const navigationItems = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/" },
-    { name: "Services", path: "/" },
-    { name: "Materials", path: "/" },
-    { name: "Gallery", path: "/" },
-    { name: "Contact", path: "/" },
+    { name: "About", path: "/About" },
+    { name: "Services", path: "/Services" },
+    { name: "Materials", path: "/Materials" },
+    { name: "Gallery", path: "/Gallery" },
+    { name: "Contact", path: "/Contact" },
   ];
 
   return (
@@ -92,3 +92,4 @@ export default function Navbar() {
     </header>
   );
 }
+
