@@ -20,7 +20,7 @@ const About = () => {
   ];
   const byTheNumbersCard = [
     { id: "1",
-      cardTitle: "12+",
+      cardTitle: "20+",
       cardText:
         "Years in Business",
     },
