@@ -24,7 +24,7 @@ export default function Navbar() {
               <img
                 src="https://res.cloudinary.com/dmb5ggmvg/image/upload/v1759492178/WhatsApp_Image_2025-10-03_at_12.49.12_3505a48c_ovx9ud.jpg"
                 alt="Brand-logo"
-                className="md:w- h-16 w-16 rounded-sm"
+                className="h-16 w-16 rounded-sm"
               />
               <div className="">
               <h1 className="poppins-black text-[#0B4D91] hidden lg:block">CLIMADE PAINTS</h1>
