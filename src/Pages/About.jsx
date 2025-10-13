@@ -159,6 +159,21 @@ const About = () => {
             ))}
           </div>
         </div>
+
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/20 shadow-xl p-6 space-y-4">
+        <div className="space-y-1">
+          <h1 className="text-2xl poppins-bold text-[#CC323A]">Ready to plan your project?</h1>
+         
+        </div>
+
+        <div className="space-x-2 space-y-2">
+          <button className="text-white bg-[#CC323A] p-2 rounded-lg poppins-bold">Request an Estimate</button>
+          <button className="text-white bg-[#CC323A] p-2 rounded-lg poppins-bold">Book a Site visit</button>
+        </div>
+        </div>
+        </section>
+
       </section>
     </>
   );
