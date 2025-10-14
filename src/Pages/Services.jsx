@@ -31,7 +31,7 @@ const Services = () => {
       cardTitle: "Commercial Projects",
       cardText:
         "Office, retail, and common areas with after-hours scheduling and safety-first ops.",
-      tags: ["After Hours", "Low Odor", "Site Safety"],
+      tags: ["After Hours", "Low Odour", "Site Safety"],
     },
   ];
   const planningCards = [
@@ -130,7 +130,7 @@ const Services = () => {
 "
               >
                 <div className="flex gap-x-1">
-                  <img src={wwdCard.icon} alt="" />
+                  <img src={wwdCard.icon} alt="" className="text-[#CC323A]"/>
                   <h1 className="font-bold text-[#CC323A]">
                     {wwdCard.cardTitle}
                   </h1>
@@ -245,3 +245,5 @@ const Services = () => {
 };
 
 export default Services;
+
+http://res.cloudinary.com/spiderless/image/upload/c_scale,co_rgb:3D315B,e_colorize:100,f_png,h_96,w_96/icons/google/material-icons/local_offer.png
