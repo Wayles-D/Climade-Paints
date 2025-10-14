@@ -245,5 +245,3 @@ const Services = () => {
 };
 
 export default Services;
-
-http://res.cloudinary.com/spiderless/image/upload/c_scale,co_rgb:3D315B,e_colorize:100,f_png,h_96,w_96/icons/google/material-icons/local_offer.png
