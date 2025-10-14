@@ -53,7 +53,7 @@ const About = () => {
   ];
   return (
     <>
-      <section className="grid grid-cols-1 md-grid-cols-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#dea8aa7d]">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#dea8aa7d]">
         <div>
           {/* left Image */}
           <div className="md:flex md:gap-x-8">
@@ -96,7 +96,8 @@ const About = () => {
             {firstCardContents.map((texts) => (
               <div
                 key={texts.id}
-                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] space-y-2 shadow-gray-500 shadow-lg hover:"
+                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] space-y-2 shadow-gray-500 shadow-lg hover:scale-105 transition-transform duration-200
+"
               >
                 <h1 className="poppins-black text-[#CC323A]">
                   {texts.cardTitle}
@@ -122,7 +123,8 @@ const About = () => {
             {byTheNumbersCard.map((byn) => (
               <div
                 key={byn.id}
-                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:"
+                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:scale-105 transition-transform duration-200
+"
               >
                 <h1 className="poppins-black text-[#CC323A]">
                   {byn.cardTitle}
@@ -149,7 +151,8 @@ const About = () => {
             {values.map((value) => (
               <div
                 key={value.id}
-                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:"
+                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:scale-105 transition-transform duration-200
+"
               >
                 <h1 className="poppins-black text-[#CC323A]">
                   {value.cardTitle}

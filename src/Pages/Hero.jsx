@@ -4,7 +4,7 @@ const Hero = () => {
 
   return (
     <>
-      <section className="grid grid-cols-1 md-grid-cols-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#accbea5b]">
+      <section className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#accbea5b]">
         {/* left Image */}
         <div className="md:flex md:gap-x-8">
           <img
@@ -31,7 +31,6 @@ const Hero = () => {
               <p className="text-xs lora-normal text-[#6B7280]">Fully insured • Background-checked crews • Written warranty</p>
             </div>
           </div>
-
         </div>
       </section>
       <hr className="border-t-2 border-[#7288cfb8]"/>

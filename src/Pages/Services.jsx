@@ -34,11 +34,31 @@ const Services = () => {
       tags: ["After Hours", "Low Odor", "Site Safety"],
     },
   ];
-  const byTheNumbersCard = [
-    { id: "1", cardTitle: "20+", cardText: "Years in Business" },
-    { id: "2", cardTitle: "1200+", cardText: "Projects Completed" },
-    { id: "3", cardTitle: "100%", cardText: "Insured and bonded" },
+  const planningCards = [
+    {
+      id: "1",
+      cardTitle: "Prep & Protection",
+      cardIcon:
+        "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1760227069/Group_kqtp86.svg",
+      cardTexts: [
+        "Detailed surface inspection, patching, sanding, and priming.",
+        "Floor, furniture, and fixture protection; HEPA dust control.",
+        "Color sampling and sheen guidance for each room or facade.",
+      ],
+    },
+    {
+      id: "2",
+      cardTitle: "Materials & Coatings",
+      cardIcon:
+        "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1760227069/Group_kqtp86.svg",
+      cardTexts: [
+        "Low-VOC paints for healthy interiors; specialty primers for problem areas.",
+        "Weather-rated finishes for exteriors: UV, moisture, and mildew resistant.",
+        "Industrial coatings for commercial high-traffic zones.",
+      ],
+    },
   ];
+
   const ourProcessCard = [
     {
       id: "1",
@@ -67,7 +87,7 @@ const Services = () => {
   ];
   return (
     <>
-      <section className="grid grid-cols-1 md-grid-cols-2 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#dea8aa7d]">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#dea8aa7d]">
         <div>
           {/* left Image */}
           <div className="md:flex md:gap-x-8">
@@ -106,17 +126,24 @@ const Services = () => {
             {whatWeDoCard.map((wwdCard) => (
               <div
                 key={wwdCard.id}
-                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] space-y-2 shadow-gray-500 shadow-lg hover:"
-              ><div className="flex gap-x-1">
-                <img src={wwdCard.icon} alt="" />
-                <h1 className="font-bold text-[#CC323A]">
-                  {wwdCard.cardTitle}
-                </h1>
+                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] space-y-2 shadow-gray-500 shadow-lg hover:scale-105 transition-transform duration-200
+"
+              >
+                <div className="flex gap-x-1">
+                  <img src={wwdCard.icon} alt="" />
+                  <h1 className="font-bold text-[#CC323A]">
+                    {wwdCard.cardTitle}
+                  </h1>
                 </div>
                 <p className="lora-normal text-gray-950">{wwdCard.cardText}</p>
                 <div className="space-x-2 space-y-2 space-">
                   {wwdCard.tags.map((tag, tagIndex) => (
-                    <button key={tagIndex} className="bg-[#CC323A] px-2 h-[29px] rounded-xl text-white font-semibold">{tag}</button>
+                    <button
+                      key={tagIndex}
+                      className="bg-[#CC323A] px-2 h-[29px] rounded-xl text-white font-semibold"
+                    >
+                      {tag}
+                    </button>
                   ))}
                 </div>
               </div>
@@ -125,18 +152,42 @@ const Services = () => {
         </div>
 
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/20 shadow-xl p-6 space-y-4">
-        <div className="space-y-1">
-          <h1 className="text-2xl poppins-bold text-[#CC323A]">We don't just Paint — we also supply painting Materials.</h1>
-          <p className="lora-normal">From paint buckets to brushes and accessories, we provide everything you need for your next project.</p>
-        </div>
+          <div className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/60 shadow-xl p-6 space-y-4 border-[#CC323A] border-2">
+            <div className="space-y-1">
+              <h1 className="text-2xl poppins-bold text-[#CC323A]">
+                We don't just Paint — we also supply painting Materials.
+              </h1>
+              <p className="lora-normal">
+                From paint buckets to brushes and accessories, we provide
+                everything you need for your next project.
+              </p>
+            </div>
 
-        <div>
-          <button className="text-white bg-[#CC323A] p-2 rounded-lg poppins-bold">View Materials</button>
-        </div>
-        </div>
+            <div>
+              <button className="text-white bg-[#CC323A] p-2 rounded-lg poppins-bold">
+                View Materials
+              </button>
+            </div>
+          </div>
         </section>
 
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:flex gap-2 justify-between space-y-3 sm:space-y-0">
+          {planningCards.map((card) => (
+              <div key={card.id} className="w-full border-2 border-[#CC323A] border-rounded p-2 rounded-lg bg-white/60">
+                <h1 className="text-[#CC323A] font-bold">{card.cardTitle}</h1>
+                <div>
+                  {card.cardTexts.map((text, textIndex) => (
+                    <div key={textIndex} className="flex space-x-2">
+                      <img src={card.cardIcon} alt="checkmark-icon"/>
+                      <div>
+                        <p className="text-xs">{text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+          ))}
+        </section>
       </section>
       <hr className="border-t-2 border-[#ef7d83c1]" />
 
@@ -153,7 +204,8 @@ const Services = () => {
             {ourProcessCard.map((processCard) => (
               <div
                 key={processCard.id}
-                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:"
+                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:scale-105 transition-transform duration-200
+"
               >
                 <h6 className="text-[#CC323A] font-bold">{processCard.no}</h6>
                 <h1 className="poppins-black text-[#CC323A]">
@@ -168,22 +220,25 @@ const Services = () => {
         </div>
 
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/20 shadow-xl p-6 space-y-4">
-        <div className="space-y-1">
-          <h1 className="text-2xl poppins-bold text-[#CC323A]">Tell us about your project</h1>
-         
-        </div>
+          <div className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/20 shadow-xl p-6 space-y-4">
+            <div className="space-y-1">
+              <h1 className="text-2xl poppins-bold text-[#CC323A]">
+                Tell us about your project
+              </h1>
+            </div>
 
-        <div className="space-x-2 space-y-2">
-          <button className="text-white bg-[#CC323A] p-2 rounded-lg poppins-bold">Request an Estimate</button>
-          <button className="text-white bg-[#CC323A] p-2 rounded-lg poppins-bold">Book a Site visit</button>
-        </div>
-        </div>
+            <div className="space-x-2 space-y-2">
+              <button className="text-[#CC323A] border-[#CC323A] border-2 border-rounded bg-white p-2 rounded-lg poppins-bold">
+                Request an Estimate
+              </button>
+              <button className="text-white bg-[#CC323A] border-white border-2 border-rounded p-2 rounded-lg poppins-bold">
+                Book a Site visit
+              </button>
+            </div>
+          </div>
         </section>
-
       </section>
 
-      
       <hr className="border-t-2 border-[#ef7d83c1]" />
     </>
   );
