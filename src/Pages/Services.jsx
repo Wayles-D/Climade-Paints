@@ -151,8 +151,8 @@ const Services = () => {
           </div>
         </div>
 
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/60 shadow-xl p-6 space-y-4 border-[#CC323A] border-2">
+        <section className="px-4 sm:px-6 lg:px-8 py-20">
+          <div data-aos="fade-up" className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/60 shadow-xl p-6 space-y-4 border-[#CC323A] border-2">
             <div className="space-y-1">
               <h1 className="text-2xl poppins-bold text-[#CC323A]">
                 We don't just Paint — we also supply painting Materials.
@@ -171,9 +171,9 @@ const Services = () => {
           </div>
         </section>
 
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:flex gap-2 justify-between space-y-3 sm:space-y-0">
+        <section className=" md:flex gap-2 justify-between space-y-3 md:space-y-0">
           {planningCards.map((card) => (
-              <div key={card.id} className="w-full border-2 border-[#CC323A] border-rounded p-2 rounded-lg bg-white/60">
+              <div data-aos="fade-up" key={card.id} className="w-full border-2 border-[#CC323A] border-rounded p-2 rounded-lg bg-white/60">
                 <h1 className="text-[#CC323A] font-bold">{card.cardTitle}</h1>
                 <div>
                   {card.cardTexts.map((text, textIndex) => (
@@ -220,7 +220,7 @@ const Services = () => {
         </div>
 
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/20 shadow-xl p-6 space-y-4">
+          <div data-aos="zoom-in" className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/20 shadow-xl p-6 space-y-4">
             <div className="space-y-1">
               <h1 className="text-2xl poppins-bold text-[#CC323A]">
                 Tell us about your project

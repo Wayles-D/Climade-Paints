@@ -32,7 +32,7 @@ const FeaturedProjects = () => {
   return (
     <>
       <section>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 bg-[#6b9fd054]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 bg-[#619ed79b]">
           <div data-aos="zoom-in">
           <div className="text-center space-y-4">
             <h1 className="text-2xl poppins-black text-[#0B4D91]">
