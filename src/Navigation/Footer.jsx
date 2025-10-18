@@ -33,14 +33,14 @@ export default function Footer() {
             <div className="">
               <div className="">
                 <img
-                  src="https://res.cloudinary.com/dmb5ggmvg/image/upload/v1759492178/WhatsApp_Image_2025-10-03_at_12.49.12_3505a48c_ovx9ud.jpg"
+                  src="https://res.cloudinary.com/dmb5ggmvg/image/upload/v1760822145/Untitled_design_2_cdgihd.png"
                   alt="Brand-logo"
                   className="w-16 h-16 rounded-sm"
                 />
               </div>
               <div className="">
                 <h2 className="text-white font-bold text-lg">
-                  Climade Paints
+                  Larr Medas Decorations
                 </h2>
               </div>
             </div>

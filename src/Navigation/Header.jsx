@@ -17,23 +17,23 @@ export default function Navbar() {
   return (
     <header className="backdrop-blur-xl bg-white shadow-sm border-b border-gray-50 fixed top-0 left-0 w-full pt-2 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between ">
           {/* Logo */}
           <Link to="/">
             <div className="flex items-center space-x-1">
               <img
-                src="https://res.cloudinary.com/dmb5ggmvg/image/upload/v1759492178/WhatsApp_Image_2025-10-03_at_12.49.12_3505a48c_ovx9ud.jpg"
+                src="https://res.cloudinary.com/dmb5ggmvg/image/upload/v1760822145/Untitled_design_2_cdgihd.png"
                 alt="Brand-logo"
                 className="h-16 w-16 rounded-sm"
               />
               <div className="">
-              <h1 className="poppins-black text-[#0B4D91] hidden lg:block">CLIMADE PAINTS</h1>
+              <h1 className="poppins-black text-[#0B4D91] hidden lg:block">Larr Medas Decorations</h1>
               </div>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 justify-items-center">
+          <nav className="hidden md:flex items-center space-x-4 justify-items-center">
             {navigationItems.map((item) => (
               <Link
                 key={item.name}
