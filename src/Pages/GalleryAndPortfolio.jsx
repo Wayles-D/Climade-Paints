@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Gallery = () => {
+const GalleryAndPortfolio = () => {
     const galleryImages = [
         {image: "https://plus.unsplash.com/premium_photo-1706140675031-1e0548986ad1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600"},
         {image: "https://images.unsplash.com/photo-1624352908259-ec0b31e421ee?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHBhaW50ZWQlMjBob3VzZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600"},
@@ -43,4 +43,4 @@ const Gallery = () => {
   )
 }
 
-export default Gallery
+export default GalleryAndPortfolio

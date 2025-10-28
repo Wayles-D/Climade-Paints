@@ -27,7 +27,7 @@ export default function Navbar() {
                 className="h-16 w-16 rounded-sm"
               />
               <div className="">
-              <h1 className="poppins-black text-[#0B4D91] hidden lg:block">Larr Medas Decorations</h1>
+              <h1 className="text-lg poppins-black text-[#0B4D91] hidden lg:block">Larr Medas Decorations</h1>
               </div>
             </div>
           </Link>
@@ -38,7 +38,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 to={item.path}
-                className="relative text-gray-700 poppins-regular font-medium  after:content-[''] after:block after:h-0.5 after:bg-[#0B4D91] after:scale-x-0 after:origin-center after:transition-transform after:duration-700 hover:after:scale-x-100"
+                className="relative text-gray-700 font-bold after:content-[''] after:block after:h-0.5 after:bg-[#0B4D91] after:scale-x-0 after:origin-center after:transition-transform after:duration-700 hover:after:scale-x-100"
               >
                 {item.name}
               </Link>

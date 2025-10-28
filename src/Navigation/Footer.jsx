@@ -100,7 +100,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-[#CB3239] flex-shrink-0" />
-                <p className="text-gray-400 text-sm">info@climadepaints.com</p>
+                <p className="text-gray-400 text-sm">info@larrmedas.com</p>
               </div>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function Footer() {
         <div className="py-6 border-t border-gray-800">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
             <p className="text-gray-400 text-xs text-center">
-              © 2025 Climade Paints. All rights reserved.
+              © 2025 Larr Medas. All rights reserved.
             </p>
 
             <p className="text-gray-400 text-xs">
