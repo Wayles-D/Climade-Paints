@@ -5,41 +5,41 @@ const Material = () => {
     {
       id: 1,
       productImage:
-        "https://plus.unsplash.com/premium_photo-1706140675031-1e0548986ad1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
+        "https://plus.unsplash.com/premium_photo-1681487367144-3ac7acfead6f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8UGFpbnQlMjBidWNrZXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
       productName: "Premium Interior Paint - Satin",
       sizeAndType: "1 Gal • Low-VOC",
     },
     {
       id: 2,
       productImage:
-        "https://images.unsplash.com/photo-1624352908259-ec0b31e421ee?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHBhaW50ZWQlMjBob3VzZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
+        "https://images.unsplash.com/photo-1673297821205-e0575bbc2ab7?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cGFpbnQlMjBtYXR0ZXxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000",
       productName: "Exterior Weatherproof Paint - Matte",
       sizeAndType: "1 Gal • UV/Mildew Guard",
     },
     {
       id: 3,
       productImage:
-        "https://plus.unsplash.com/premium_photo-1694030762810-06f5b9906cbc?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjV8fGNvbG9yZnVsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
+        "https://plus.unsplash.com/premium_photo-1681487372049-015fdbb3608e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8UGFpbnQlMjBidWNrZXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
       productName: "Stain-Blocking Primer",
       sizeAndType: "1 Gal • High-Adhesion",
     },
     {
       id: 4,
       productImage:
-        "https://images.unsplash.com/photo-1624352908259-ec0b31e421ee?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHBhaW50ZWQlMjBob3VzZXN8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
+        "https://plus.unsplash.com/premium_photo-1676322397244-8cdfecdbc07e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHBhaW50JTIwYnJ1c2h8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000",
       productName: "Pro Brush Set",
       sizeAndType: "3 pcs • Nylon/Poly",
     },
     {
       id: 5,
       productImage:
-        "https://plus.unsplash.com/premium_photo-1694030763033-613b0b7a3f92?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjF8fGNvbG9yZnVsJTIwaG91c2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
+        "https://images.unsplash.com/photo-1652829069862-87874e119527?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8UGFpbnQlMjBidWNrZXR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&q=60&w=600",
       productName: "Microfiber Roller Kit",
       sizeAndType: "9in • Tray + 2 Covers",
     },
     {
       id: 6,
-      productImage: "https://plus.unsplash.com/premium_photo-1706140675031-1e0548986ad1?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fGludGVyaW9yfGVufDB8fDB8fHww&auto=format&fit=crop&q=60&w=600",
+      productImage: "https://images.unsplash.com/photo-1536356915696-c6bf1c01da46?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hc2tpbmclMjB0YXBlfGVufDB8fDB8fHww&fm=jpg&q=60&w=3000",
       productName: "Masking Tape & Drop Covers",
       sizeAndType: "2 Rolls • 2 Covers",
     },
@@ -79,7 +79,7 @@ const Material = () => {
           {materialListings.map((material => (
             <div key={material.id}>
               <div className="border-2 border-[#cc323a65] rounded-lg p-2 gap-y-2 shadow-lg shadow-gray-500">
-                <img src={material.productImage} alt="" className="md:h-[160px] w-full rounded-lg"/>
+                <img src={material.productImage} alt="" className=" w-full rounded-lg"/>
                 <div className="space-y-1 w-fit mt-1">
                 <h2>{material.productName}</h2>
                 <p>{material.sizeAndType}</p>
