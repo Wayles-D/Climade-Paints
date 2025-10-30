@@ -81,7 +81,7 @@ const Material = () => {
               <div className="border-2 border-[#cc323a65] rounded-lg p-2 gap-y-2 shadow-lg shadow-gray-500">
                 <img src={material.productImage} alt="" className=" w-full rounded-lg"/>
                 <div className="space-y-1 w-fit mt-1">
-                <h2>{material.productName}</h2>
+                <h2 className="poppins-bold text-[#CC323A]">{material.productName}</h2>
                 <p>{material.sizeAndType}</p>
                 </div>
               </div>

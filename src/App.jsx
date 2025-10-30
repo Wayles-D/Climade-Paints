@@ -6,6 +6,7 @@ import Footer from './Navigation/Footer'
 import About from './Pages/About'
 import Services from './Pages/Services'
 import Materials from './Pages/Materials'
+import Gallery from './Pages/Gallery'
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
           <Route path='/About' element={<About/>} />
           <Route path='/Services' element={<Services/>} />
           <Route path='/Materials' element={<Materials/>} />
+          <Route path='/Gallery' element={<Gallery/>} />
         </Routes>
         <Footer/>
         </div>
