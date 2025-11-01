@@ -3,6 +3,7 @@ import arrowY from "../assets/SVG.svg";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 const FeaturedProjects = () => {
 
@@ -39,7 +40,7 @@ const FeaturedProjects = () => {
               Featured Projects
             </h1>
             <p className="text-sm mt-2 mb-1">
-              Before and after highlights from recent jobs.
+             Move the Slider to see our Before and After highlights from recent jobs.
             </p>
           </div>
 
@@ -60,12 +61,14 @@ const FeaturedProjects = () => {
                         src={slider.beforeImage}
                         alt="Before and After Images"
                       />
+                      <p className="pl-3">Before</p>
                     </div>
                     <div className="diff-item-2" role="img">
                       <img
                         src={slider.afterImage}
                         alt="Before and After Images"
                       />
+                      <p className="pr-3 text-end">After</p>
                     </div>
                     <div className="diff-resizer"></div>
                   </figure>
@@ -74,13 +77,17 @@ const FeaturedProjects = () => {
             ))}
           </div>
           {/* Centered buttons below the grid */}
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 md:gap-x-2 mt-8">
+            <Link to={'/Gallery'}>
             <button className="px-6 py-2 rounded-lg bg-[#0B4D91] text-white font-semibold shadow hover:bg-[#093a6c]">
               See Full Portfolio
             </button>
+            </Link>
+            <Link to={'/Quote'}>
             <button className="px-6 py-2 rounded-lg bg-[#F2F5F4] text-[#0B4D91] font-semibold shadow border border-[#E6E8EA] hover:bg-[#e6e8ea]">
-              Request Estimate
+              Request a Quote
             </button>
+            </Link>
           </div>
         </div>
         </div>

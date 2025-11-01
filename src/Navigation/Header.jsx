@@ -45,7 +45,7 @@ export default function Navbar() {
             ))}
             {/* Get a quote button */}
             <Link
-              to="/quote"
+              to="/Quote"
               className="ml-4 px-4 py-2 rounded-xl  bg-[#0B4D91] font-semibold shadow text-white hover:text-gray-200 md:ml-0"
             >
               Get a Quote
@@ -79,7 +79,7 @@ export default function Navbar() {
               ))}
               {/* Get a quote button for mobile */}
               <Link
-                to="/quote"
+                to="/Quote"
                 className="block mt-2 px-3 py-2 rounded bg-[#0B4D91] text-white font-semibold shadow text-center hover:bg-[#F2F5F4] transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >

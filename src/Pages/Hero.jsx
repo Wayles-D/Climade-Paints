@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
 
@@ -24,7 +25,9 @@ const Hero = () => {
 
             <div className="flex gap-x-2 mt-2 poppins-bold">
             <button className="bg-[#0B4D91] w-[141.8px] h-[39px] rounded-2xl text-white hover:cursor-pointer">Book a Site visit</button>
+            <Link to={'/Gallery'}>
             <button className="bg-gray-200 w-[141.8px] h-[39px] rounded-2xl hover:cursor-pointer">View Portfolio</button>
+            </Link>
           </div>
 
             <div className="mt-1">

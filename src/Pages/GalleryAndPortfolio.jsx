@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const GalleryAndPortfolio = () => {
     const galleryImages = [
@@ -33,9 +34,11 @@ const GalleryAndPortfolio = () => {
         </div>
 
          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+          <Link to={'Gallery'}>
             <button className="px-6 py-2 rounded-lg bg-[#0B4D91] text-white font-semibold shadow hover:bg-[#093a6c]">
               View Gallery
             </button>
+            </Link>
           </div>
 
     </section>

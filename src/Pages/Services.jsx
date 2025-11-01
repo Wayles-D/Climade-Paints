@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   useEffect(() => {
@@ -93,7 +94,7 @@ const Services = () => {
           <div className="md:flex md:gap-x-8">
             <img
               className="rounded-2xl lg:shadow-gray-700 shadow-gray-500 shadow-lg lg:shadow-xl sm:w-full md:w-1/2 md:animate__animated md:animate__backInLeft"
-              src="https://media.istockphoto.com/id/184104512/photo/man-at-work-20-series.jpg?s=612x612&w=0&k=20&c=XtXxqjAQbvkcug__P8bn63g_ZZouTil0wJBuKAvLvhY="
+              src="https://media.istockphoto.com/id/1372512715/photo/african-american-professional-painter-paints-the-wall-indoors.jpg?s=612x612&w=0&k=20&c=ehV2Pjsp7UMI-f4dCwy7R3uVjLZLr9BPtDKXd3cx6nA="
               alt=""
             />
             <div className="md:my-auto md:h-[200px]  md:w-[472.73px] sm:space-y-2  md:animate__animated md:animate__backInRight">
@@ -164,9 +165,11 @@ const Services = () => {
             </div>
 
             <div>
+              <Link to={"/Materials"}>
               <button className="text-white bg-[#CC323A] p-2 rounded-lg poppins-bold">
                 View Materials
               </button>
+              </Link>
             </div>
           </div>
         </section>

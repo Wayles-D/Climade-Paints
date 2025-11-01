@@ -52,7 +52,7 @@ const Material = () => {
           <div className="md:flex md:gap-x-8">
             <img
               className="rounded-2xl lg:shadow-gray-700 shadow-gray-500 shadow-lg lg:shadow-xl sm:w-full md:w-1/2 md:animate__animated md:animate__backInLeft"
-              src="https://media.istockphoto.com/id/184104512/photo/man-at-work-20-series.jpg?s=612x612&w=0&k=20&c=XtXxqjAQbvkcug__P8bn63g_ZZouTil0wJBuKAvLvhY="
+              src="https://media.istockphoto.com/id/962884916/photo/blurred-paint-at-large-hardware-store-in-usa-customer-shopping.jpg?s=612x612&w=0&k=20&c=DsSNqLnj3DwwLlopep_BetwKEruFDjW1bLIsELpwaeY="
               alt=""
             />
             <div className="md:my-auto md:h-[200px]  md:w-[602.8px] sm:space-y-2  md:animate__animated md:animate__backInRight">
