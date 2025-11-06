@@ -1,9 +1,54 @@
-import React from 'react'
+import React from "react";
 
 const Gallery = () => {
+  const projects = [
+    {
+      id: 1,
+      projectImage:
+        "https://plus.unsplash.com/premium_photo-1723901831135-782c98d8d8e0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fHww&fm=jpg&q=60&w=3000",
+      projectName: "Parkside Living Room",
+      tags: ["Interior", "Matte + Semi-Gloss"],
+    },
+    {
+      id: 2,
+      projectImage:
+        "https://images.unsplash.com/photo-1628624747186-a941c476b7ef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SG91c2UlMjBFeHRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000",
+      projectName: "Oakridge Exterior",
+      tags: ["Exterior", "Weatherproof"],
+    },
+    {
+      id: 3,
+      projectImage:
+        "https://images.unsplash.com/photo-1604328702728-d26d2062c20b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8b2ZmaWNlJTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000",
+      projectName: "Beacon Office Suite",
+      tags: ["Commercial", "Low Odour"],
+    },
+
+    {
+      id: 4,
+      projectImage:
+        "https://plus.unsplash.com/premium_photo-1723901831135-782c98d8d8e0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fHww&fm=jpg&q=60&w=3000",
+      projectName: "Parkside Living Room",
+      tags: ["Interior", "Matte + Semi-Gloss"],
+    },
+    {
+      id: 5,
+      projectImage:
+        "https://images.unsplash.com/photo-1628624747186-a941c476b7ef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SG91c2UlMjBFeHRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000",
+      projectName: "Oakridge Exterior",
+      tags: ["Exterior", "Weatherproof"],
+    },
+    {
+      id: 6,
+      projectImage:
+        "https://images.unsplash.com/photo-1604328702728-d26d2062c20b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8b2ZmaWNlJTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000",
+      projectName: "Beacon Office Suite",
+      tags: ["Commercial", "Low Odour"],
+    },
+  ];
   return (
     <>
-     <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#de898c7d]">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#de898c7d]">
         <div>
           {/* left Image */}
           <div className="md:flex md:gap-x-8">
@@ -24,27 +69,67 @@ const Gallery = () => {
             </div>
           </div>
         </div>
-
       </section>
-      
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 bg-[#de898c7d]">
-        <div className='flex-wrap md:flex justify-between'>
-        <div className='flex flex-wrap gap-y-2 justify-evenly space-x-3 text-xs md:text-[16px]'>
-          <p className='p-2 border-2 rounded-xl border-accent-content bg-white/40 text-red-500'>All</p>
-          <p className='p-2 border-2 rounded-xl border-accent-content bg-white/40'>Interiors</p>
-          <p className='p-2 border-2 rounded-xl border-accent-content bg-white/40'>Exteriors</p>
-          <p className='p-2 border-2 rounded-xl border-accent-content bg-white/40'>Commercials</p>
-        </div>
 
-        <div className='flex p-2 space-x-3 rounded-xl border-2 border-black w-auto mt-2 md:mt-0 focus-within:border-red-500 transition-colors'>
-          <img src="https://res.cloudinary.com/dmb5ggmvg/image/upload/v1762371448/SVG_i8lnpj.png" alt="search-icon" className='w-[18px] h-[19px] mt-0.5 text-black'/>
-          <input type="search" placeholder='Search Projects...' className='border-none outline-none bg-transparent w-full over'/>
-          
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 bg-[#de898c7d]">
+        <div className="flex-wrap md:flex justify-between">
+          <div className="flex flex-wrap gap-y-2 justify-evenly space-x-3 text-xs sm:text-[16px]">
+            <p className="p-2 border-2 rounded-xl border-accent-content bg-white/40 text-red-500">
+              All
+            </p>
+            <p className="p-2 border-2 rounded-xl border-accent-content bg-white/40">
+              Interiors
+            </p>
+            <p className="p-2 border-2 rounded-xl border-accent-content bg-white/40">
+              Exteriors
+            </p>
+            <p className="p-2 border-2 rounded-xl border-accent-content bg-white/40">
+              Commercials
+            </p>
+          </div>
+
+          <div className="flex p-2 space-x-3 rounded-xl border-2 border-black w-auto mt-2 md:mt-0 focus-within:border-red-500 transition-colors">
+            <img
+              src="https://res.cloudinary.com/dmb5ggmvg/image/upload/v1762371448/SVG_i8lnpj.png"
+              alt="search-icon"
+              className="w-[18px] h-[19px] mt-0.5 text-black"
+            />
+            <input
+              type="search"
+              placeholder="Search Projects..."
+              className="border-none outline-none bg-transparent w-full over"
+            />
+          </div>
         </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
+          {projects.map((project) => (
+            <div key={project.id}>
+              <div className="border-2 border-[#cc323a65] rounded-lg p-2 gap-y-2 shadow-lg shadow-gray-500">
+                <img
+                  src={project.projectImage}
+                  alt=""
+                  className=" w-full rounded-lg"
+                />
+                <div className="space-y-1 w-fit mt-1">
+                  <h2 className="poppins-bold text-[#CC323A]">
+                    {project.projectName}
+                  </h2>
+                    </div>
+
+                  <div className="flex gap-2">
+                    {project.tags.map((tag, tagIndex) => (
+                      <div key={tagIndex} className="p-1 bg-white/50 border-1 border-accent text-[#CC323A] rounded-2xl">
+                        <p className="">{tag}</p>
+                      </div>
+                    ))}
+                  </div>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default Gallery
+export default Gallery;
