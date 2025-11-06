@@ -119,7 +119,7 @@ const Gallery = () => {
                   <div className="flex gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <div key={tagIndex} className="p-1 bg-white/50 border-1 border-accent text-[#CC323A] rounded-2xl">
-                        <p className="">{tag}</p>
+                        <p className="px-1">{tag}</p>
                       </div>
                     ))}
                   </div>
