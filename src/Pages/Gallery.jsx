@@ -93,7 +93,7 @@ const Gallery = () => {
       </section>
       <hr className="border-t-2 border-[#CC323A]"/>
 
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 bg-[#de898c7d]">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 bg-[#de898c7d]">
         <div className="flex-wrap md:flex justify-between">
           <div className="flex flex-wrap gap-y-2 justify-evenly space-x-3 text-xs sm:text-[16px]">
             <p className="p-2 border-2 rounded-xl border-accent-content bg-white/40 text-red-500">
