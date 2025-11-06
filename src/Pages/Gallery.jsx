@@ -45,6 +45,27 @@ const Gallery = () => {
       projectName: "Beacon Office Suite",
       tags: ["Commercial", "Low Odour"],
     },
+    {
+      id: 7,
+      projectImage:
+        "https://plus.unsplash.com/premium_photo-1723901831135-782c98d8d8e0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fHww&fm=jpg&q=60&w=3000",
+      projectName: "Parkside Living Room",
+      tags: ["Interior", "Matte + Semi-Gloss"],
+    },
+    {
+      id: 7,
+      projectImage:
+        "https://images.unsplash.com/photo-1628624747186-a941c476b7ef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SG91c2UlMjBFeHRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000",
+      projectName: "Oakridge Exterior",
+      tags: ["Exterior", "Weatherproof"],
+    },
+    {
+      id: 9,
+      projectImage:
+        "https://images.unsplash.com/photo-1604328702728-d26d2062c20b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8b2ZmaWNlJTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000",
+      projectName: "Beacon Office Suite",
+      tags: ["Commercial", "Low Odour"],
+    },
   ];
   return (
     <>
@@ -110,19 +131,21 @@ const Gallery = () => {
                   alt=""
                   className=" w-full rounded-lg"
                 />
-                <div className="space-y-1 w-fit mt-1">
+                <div className="flex mt-1 justify-between">
+                <div className="space-y-1 w-fit">
                   <h2 className="poppins-bold text-[#CC323A]">
                     {project.projectName}
                   </h2>
                     </div>
 
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 w-fit">
                     {project.tags.map((tag, tagIndex) => (
                       <div key={tagIndex} className="p-1 bg-white/50 border-1 border-accent text-[#CC323A] rounded-2xl">
-                        <p className="px-1">{tag}</p>
+                        <p className="px-1 text-xs">{tag}</p>
                       </div>
                     ))}
                   </div>
+              </div>
               </div>
             </div>
           ))}
