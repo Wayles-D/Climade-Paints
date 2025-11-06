@@ -28,7 +28,7 @@ const Gallery = () => {
       </section>
       
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 bg-[#de898c7d]">
-        <div className='flex-wrap md:flex-n justify-between'>
+        <div className='flex-wrap md:flex justify-between'>
         <div className='flex space-x-2'>
           <p className='p-2 border-2 rounded-xl border-accent-content bg-white/40 text-red-500'>All</p>
           <p className='p-2 border-2 rounded-xl border-accent-content bg-white/40'>Interiors</p>
@@ -36,9 +36,10 @@ const Gallery = () => {
           <p className='p-2 border-2 rounded-xl border-accent-content bg-white/40'>Commercials</p>
         </div>
 
-        <div className='flex p-2 space-x-1 border-2  rounded-xl border-accent-content md:w-[260px]  mt-2 md:mt-0 w-full'>
-          <img src="https://res.cloudinary.com/dmb5ggmvg/image/upload/v1762371448/SVG_i8lnpj.png" alt="search-icon" className='w-[18px] h-[19px] mt-0.5'/>
-          <p className='h-[18px] px-2 text-accent'>Search Projects...</p>
+        <div className='flex p-2 space-x-3 rounded-xl border-2 border-black w-auto mt-2 md:mt-0 focus-within:border-red-500 transition-colors'>
+          <img src="https://res.cloudinary.com/dmb5ggmvg/image/upload/v1762371448/SVG_i8lnpj.png" alt="search-icon" className='w-[18px] h-[19px] mt-0.5 text-black'/>
+          <input type="search" placeholder='Search Projects...' className='border-none outline-none bg-transparent'/>
+          
         </div>
         </div>
       </section>
