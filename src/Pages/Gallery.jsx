@@ -91,6 +91,7 @@ const Gallery = () => {
           </div>
         </div>
       </section>
+      <hr className="border-t-2 border-[#CC323A]"/>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 bg-[#de898c7d]">
         <div className="flex-wrap md:flex justify-between">
@@ -153,12 +154,12 @@ const Gallery = () => {
             </div>
           ))}
         </div>
-        <div className="join flex justify-center items-center mt-3 text-[#CC323A] rounded-lg">
-          <button className="join-item btn">Prev</button>
-          <button className="join-item btn btn-active">1</button>
-          <button className="join-item btn">2</button>
-          <button className="join-item btn">3</button>
-          <button className="join-item btn">Next</button>
+        <div className="join flex justify-center items-center mt-3 text-[#CC323A] gap-x-1">
+          <button className="join-item btn rounded-l-lg">Prev</button>
+          <button className="join-item btn rounded-sm">1</button>
+          <button className="join-item btn btn-active rounded-sm">2</button>
+          <button className="join-item btn rounded-sm">3</button>
+          <button className="join-item btn rounded-r-lg">Next</button>
         </div>
       </section>
     </>
