@@ -132,23 +132,33 @@ const Gallery = () => {
                   className=" w-full rounded-lg"
                 />
                 <div className="flex mt-1 justify-between">
-                <div className="space-y-1 w-fit">
-                  <h2 className="poppins-bold text-[#CC323A]">
-                    {project.projectName}
-                  </h2>
-                    </div>
+                  <div className="space-y-1 w-fit">
+                    <h2 className="poppins-bold text-[#CC323A]">
+                      {project.projectName}
+                    </h2>
+                  </div>
 
                   <div className="flex gap-2 w-fit">
                     {project.tags.map((tag, tagIndex) => (
-                      <div key={tagIndex} className="p-1 bg-white/50 border-1 border-accent text-[#CC323A] rounded-2xl">
+                      <div
+                        key={tagIndex}
+                        className="p-1 bg-white/50 border-1 border-accent text-[#CC323A] rounded-2xl"
+                      >
                         <p className="px-1 text-xs">{tag}</p>
                       </div>
                     ))}
                   </div>
-              </div>
+                </div>
               </div>
             </div>
           ))}
+        </div>
+        <div className="join flex justify-center items-center mt-3 text-[#CC323A] rounded-lg">
+          <button className="join-item btn">Prev</button>
+          <button className="join-item btn btn-active">1</button>
+          <button className="join-item btn">2</button>
+          <button className="join-item btn">3</button>
+          <button className="join-item btn">Next</button>
         </div>
       </section>
     </>
