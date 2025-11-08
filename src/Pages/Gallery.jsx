@@ -132,7 +132,7 @@ const Gallery = () => {
                   alt=""
                   className=" w-full rounded-lg"
                 />
-                <div className="flex mt-1 justify-between">
+                <div className="mt-1 justify-between">
                   <div className="space-y-1 w-fit">
                     <h2 className="poppins-bold text-[#CC323A]">
                       {project.projectName}
