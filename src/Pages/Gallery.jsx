@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Gallery = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [currentFilter, setCurrentFilter] = useState("All");
+
   const projects = [
     {
       id: 1,
@@ -53,7 +56,7 @@ const Gallery = () => {
       tags: ["Interior", "Matte + Semi-Gloss"],
     },
     {
-      id: 7,
+      id: 8,
       projectImage:
         "https://images.unsplash.com/photo-1628624747186-a941c476b7ef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SG91c2UlMjBFeHRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000",
       projectName: "Oakridge Exterior",
@@ -67,6 +70,32 @@ const Gallery = () => {
       tags: ["Commercial", "Low Odour"],
     },
   ];
+
+  const filterButtons = [
+    { type: "All", label: "All" },
+    { type: "Interior", label: "Interiors" },
+    { type: "Exterior", label: "Exteriors" },
+    { type: "Commercial", label: "Commercials" },
+  ];
+
+  const handleFilter = (filterType) => {
+    setCurrentFilter(filterType);
+  };
+
+  const getFilteredProjects = () => {
+    const searchFiltered = projects.filter((project) =>
+      project.projectName.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
+    if (currentFilter === "All") {
+      return searchFiltered;
+    }
+
+    return searchFiltered.filter((project) => project.tags.includes(currentFilter));
+  };
+
+  const filteredProjects = getFilteredProjects();
+
   return (
     <>
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#de898c7d]">
@@ -91,25 +120,28 @@ const Gallery = () => {
           </div>
         </div>
       </section>
-      <hr className="border-t-2 border-[#CC323A]"/>
+      <hr className="border-t-2 border-[#CC323A]" />
 
+      {/* filter */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 bg-[#de898c7d]">
         <div className="flex-wrap md:flex justify-between">
           <div className="flex flex-wrap gap-y-2 justify-evenly space-x-3 text-xs sm:text-[16px]">
-            <p className="p-2 border-2 rounded-xl border-accent-content bg-white/40 text-red-500">
-              All
-            </p>
-            <p className="p-2 border-2 rounded-xl border-accent-content bg-white/40">
-              Interiors
-            </p>
-            <p className="p-2 border-2 rounded-xl border-accent-content bg-white/40">
-              Exteriors
-            </p>
-            <p className="p-2 border-2 rounded-xl border-accent-content bg-white/40">
-              Commercials
-            </p>
+            {filterButtons.map((button) => (
+              <button
+                key={button.type}
+                onClick={() => handleFilter(button.type)}
+                className={`p-2 border-2 rounded-xl border-accent-content ${
+                  currentFilter === button.type
+                    ? "bg-[#CC323A] text-white"
+                    : "bg-white/40 text-red-500"
+                }`}
+              >
+                {button.label}
+              </button>
+            ))}
           </div>
 
+          {/* search */}
           <div className="flex p-2 space-x-3 rounded-xl border-2 border-black w-auto mt-2 md:mt-0 focus-within:border-red-500 transition-colors">
             <img
               src="https://res.cloudinary.com/dmb5ggmvg/image/upload/v1762371448/SVG_i8lnpj.png"
@@ -119,34 +151,35 @@ const Gallery = () => {
             <input
               type="search"
               placeholder="Search Projects..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="border-none outline-none bg-transparent w-full over"
             />
           </div>
         </div>
+
+        {/* project displays */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
-          {projects.map((project) => (
-            <div key={project.id}>
+          {filteredProjects.map((project) => (
+            <div key={project.id} className="group hover:scale-105 transition-transform duration-300">
               <div className="border-2 border-[#cc323a65] rounded-lg p-2 gap-y-2 shadow-lg shadow-gray-500">
                 <img
                   src={project.projectImage}
-                  alt=""
-                  className=" w-full rounded-lg"
+                  alt={project.projectName}
+                  className="w-full rounded-lg h-48 object-cover"
                 />
                 <div className="mt-1 justify-between">
-                  <div className="space-y-1 w-fit">
-                    <h2 className="poppins-bold text-[#CC323A]">
-                      {project.projectName}
-                    </h2>
-                  </div>
-
-                  <div className="flex gap-2 w-fit">
-                    {project.tags.map((tag, tagIndex) => (
-                      <div
-                        key={tagIndex}
-                        className="p-1 bg-white/50 border-1 border-accent text-[#CC323A] rounded-2xl"
+                  <h2 className="poppins-bold text-[#CC323A]">
+                    {project.projectName}
+                  </h2>
+                  <div className="flex flex-wrap gap-2 mt-2">
+                    {project.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 bg-white/50 text-[#CC323A] text-xs rounded-full"
                       >
-                        <p className="px-1 text-xs">{tag}</p>
-                      </div>
+                        {tag}
+                      </span>
                     ))}
                   </div>
                 </div>
@@ -154,6 +187,8 @@ const Gallery = () => {
             </div>
           ))}
         </div>
+
+        {/* pagination buttons */}
         <div className="join flex justify-center items-center mt-3 text-[#CC323A] gap-x-1">
           <button className="join-item btn rounded-l-lg">Prev</button>
           <button className="join-item btn rounded-sm">1</button>
