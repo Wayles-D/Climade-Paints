@@ -83,7 +83,7 @@ export default function Navbar() {
                 className="block mt-2 px-3 py-2 rounded bg-[#0B4D91] text-white font-semibold shadow text-center hover:bg-[#F2F5F4] transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Get a quote
+                Book a Site Visit
               </Link>
             </div>
           </div>
