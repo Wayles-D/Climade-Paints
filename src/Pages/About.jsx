@@ -171,7 +171,6 @@ const About = () => {
         </div>
 
         <div className="space-x-2 space-y-2">
-          <button className="text-white bg-[#CC323A] p-2 rounded-lg poppins-bold">Request an Estimate</button>
           <button className="text-white bg-[#CC323A] p-2 rounded-lg poppins-bold">Book a Site visit</button>
         </div>
         </div>
