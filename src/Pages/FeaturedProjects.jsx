@@ -85,7 +85,7 @@ const FeaturedProjects = () => {
             </Link>
             <Link to={'/Quote'}>
             <button className="px-6 py-2 rounded-lg bg-[#F2F5F4] text-[#0B4D91] font-semibold shadow border border-[#E6E8EA] hover:bg-[#e6e8ea]">
-              Request a Quote
+              Book a Site Visit
             </button>
             </Link>
           </div>
