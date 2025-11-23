@@ -4,72 +4,29 @@ const Gallery = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [currentFilter, setCurrentFilter] = useState("All");
 
-  const projects = [
-    {
-      id: 1,
-      projectImage:
-        "https://plus.unsplash.com/premium_photo-1723901831135-782c98d8d8e0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fHww&fm=jpg&q=60&w=3000",
-      projectName: "Parkside Living Room",
-      tags: ["Interior", "Matte + Semi-Gloss"],
-    },
-    {
-      id: 2,
-      projectImage:
-        "https://images.unsplash.com/photo-1628624747186-a941c476b7ef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SG91c2UlMjBFeHRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000",
-      projectName: "Oakridge Exterior",
-      tags: ["Exterior", "Weatherproof"],
-    },
-    {
-      id: 3,
-      projectImage:
-        "https://images.unsplash.com/photo-1604328702728-d26d2062c20b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8b2ZmaWNlJTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000",
-      projectName: "Beacon Office Suite",
-      tags: ["Commercial", "Low Odour"],
-    },
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    {
-      id: 4,
-      projectImage:
-        "https://plus.unsplash.com/premium_photo-1723901831135-782c98d8d8e0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fHww&fm=jpg&q=60&w=3000",
-      projectName: "Parkside Living Room",
-      tags: ["Interior", "Matte + Semi-Gloss"],
-    },
-    {
-      id: 5,
-      projectImage:
-        "https://images.unsplash.com/photo-1628624747186-a941c476b7ef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SG91c2UlMjBFeHRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000",
-      projectName: "Oakridge Exterior",
-      tags: ["Exterior", "Weatherproof"],
-    },
-    {
-      id: 6,
-      projectImage:
-        "https://images.unsplash.com/photo-1604328702728-d26d2062c20b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8b2ZmaWNlJTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000",
-      projectName: "Beacon Office Suite",
-      tags: ["Commercial", "Low Odour"],
-    },
-    {
-      id: 7,
-      projectImage:
-        "https://plus.unsplash.com/premium_photo-1723901831135-782c98d8d8e0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGl2aW5nJTIwcm9vbSUyMGludGVyaW9yJTIwZGVzaWdufGVufDB8fDB8fHww&fm=jpg&q=60&w=3000",
-      projectName: "Parkside Living Room",
-      tags: ["Interior", "Matte + Semi-Gloss"],
-    },
-    {
-      id: 8,
-      projectImage:
-        "https://images.unsplash.com/photo-1628624747186-a941c476b7ef?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8SG91c2UlMjBFeHRlcmlvcnxlbnwwfHwwfHx8MA%3D%3D&fm=jpg&q=60&w=3000",
-      projectName: "Oakridge Exterior",
-      tags: ["Exterior", "Weatherproof"],
-    },
-    {
-      id: 9,
-      projectImage:
-        "https://images.unsplash.com/photo-1604328702728-d26d2062c20b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8b2ZmaWNlJTIwaW50ZXJpb3J8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000",
-      projectName: "Beacon Office Suite",
-      tags: ["Commercial", "Low Odour"],
-    },
-  ];
+  React.useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/api/projects');
+        if (!response.ok) {
+          throw new Error('Failed to fetch projects');
+        }
+        const data = await response.json();
+        setProjects(data);
+        setLoading(false);
+      } catch (err) {
+        console.error("Error fetching projects:", err);
+        setError(err.message);
+        setLoading(false);
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   const filterButtons = [
     { type: "All", label: "All" },
@@ -130,11 +87,10 @@ const Gallery = () => {
               <button
                 key={button.type}
                 onClick={() => handleFilter(button.type)}
-                className={`p-2 border-2 rounded-xl border-accent-content ${
-                  currentFilter === button.type
-                    ? "bg-[#CC323A] text-white"
-                    : "bg-white/40 text-red-500"
-                }`}
+                className={`p-2 border-2 rounded-xl border-accent-content ${currentFilter === button.type
+                  ? "bg-[#CC323A] text-white"
+                  : "bg-white/40 text-red-500"
+                  }`}
               >
                 {button.label}
               </button>
@@ -159,34 +115,49 @@ const Gallery = () => {
         </div>
 
         {/* project displays */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
-          {filteredProjects.map((project) => (
-            <div key={project.id} className="group hover:scale-105 transition-transform duration-300">
-              <div className="border-2 border-[#cc323a65] rounded-lg p-2 gap-y-2 shadow-lg shadow-gray-500">
-                <img
-                  src={project.projectImage}
-                  alt={project.projectName}
-                  className="w-full rounded-lg h-48 object-cover"
-                />
-                <div className="mt-1 justify-between">
-                  <h2 className="poppins-bold text-[#CC323A]">
-                    {project.projectName}
-                  </h2>
-                  <div className="flex flex-wrap gap-2 mt-2">
-                    {project.tags.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="px-2 py-1 bg-white/50 text-[#CC323A] text-xs rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+        {loading && (
+          <div className="flex justify-center items-center h-64">
+            <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-[#CC323A]"></div>
+          </div>
+        )}
+
+        {error && (
+          <div className="text-center text-red-600 py-10">
+            <p>Error loading projects: {error}</p>
+            <p>Please make sure the backend server is running.</p>
+          </div>
+        )}
+
+        {!loading && !error && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-2">
+            {filteredProjects.map((project) => (
+              <div key={project.id} className="group hover:scale-105 transition-transform duration-300">
+                <div className="border-2 border-[#cc323a65] rounded-lg p-2 gap-y-2 shadow-lg shadow-gray-500">
+                  <img
+                    src={project.projectImage}
+                    alt={project.projectName}
+                    className="w-full rounded-lg h-48 object-cover"
+                  />
+                  <div className="mt-1 justify-between">
+                    <h2 className="poppins-bold text-[#CC323A]">
+                      {project.projectName}
+                    </h2>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {project.tags.map((tag, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 bg-white/50 text-[#CC323A] text-xs rounded-full"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
 
         {/* pagination buttons */}
         <div className="join flex justify-center items-center mt-3 text-[#CC323A] gap-x-1">

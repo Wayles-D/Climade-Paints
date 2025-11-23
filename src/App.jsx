@@ -9,6 +9,7 @@ import Materials from "./Pages/Materials";
 import Gallery from "./Pages/Gallery";
 import Contact from "./Pages/Contact";
 import Quote from "./Pages/Quote";
+import BookSiteVisit from "./Pages/BookSiteVisit";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
             <Route path="/Gallery" element={<Gallery />} />
             <Route path="/Contact" element={<Contact />} />
             <Route path="/Quote" element={<Quote />} />
+            <Route path="/book-site-visit" element={<BookSiteVisit />} />
           </Routes>
           <Footer />
         </div>

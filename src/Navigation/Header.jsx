@@ -27,7 +27,7 @@ export default function Navbar() {
                 className="h-16 w-16 rounded-sm"
               />
               <div className="">
-              <h1 className="text-lg poppins-black text-[#0B4D91] hidden lg:block">Larr Medas Decorations</h1>
+                <h1 className="text-lg poppins-black text-[#0B4D91] hidden lg:block">Larr Medas Decorations</h1>
               </div>
             </div>
           </Link>
@@ -45,10 +45,10 @@ export default function Navbar() {
             ))}
             {/* Get a quote button */}
             <Link
-              to="/Quote"
+              to="/book-site-visit"
               className="ml-4 px-4 py-2 rounded-xl  bg-[#0B4D91] font-semibold shadow text-white hover:text-gray-200 md:ml-0"
             >
-            Book a Site Visit
+              Book a Site Visit
             </Link>
           </nav>
 
@@ -79,7 +79,7 @@ export default function Navbar() {
               ))}
               {/* Get a quote button for mobile */}
               <Link
-                to="/Quote"
+                to="/book-site-visit"
                 className="block mt-2 px-3 py-2 rounded bg-[#0B4D91] text-white font-semibold shadow text-center hover:bg-[#F2F5F4] transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
@@ -89,7 +89,7 @@ export default function Navbar() {
           </div>
         )}
       </div>
-    </header>
+    </header >
   );
 }
 
