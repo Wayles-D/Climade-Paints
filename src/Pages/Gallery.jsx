@@ -158,15 +158,6 @@ const Gallery = () => {
             ))}
           </div>
         )}
-
-        {/* pagination buttons */}
-        <div className="join flex justify-center items-center mt-3 text-[#CC323A] gap-x-1">
-          <button className="join-item btn rounded-l-lg">Prev</button>
-          <button className="join-item btn rounded-sm">1</button>
-          <button className="join-item btn btn-active rounded-sm">2</button>
-          <button className="join-item btn rounded-sm">3</button>
-          <button className="join-item btn rounded-r-lg">Next</button>
-        </div>
       </section>
     </>
   );

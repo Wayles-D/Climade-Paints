@@ -89,44 +89,6 @@ const Material = () => {
           )))}
         </div>
       </section>
-
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 bg-[#e79fa3]">
-        <div>
-          <div className="text-center">
-            <h1 className="text-2xl text-[#CC323A] poppins-black">Quick Consultation Form</h1>
-            <p>Tell us about your space and we'll recommend the best products. </p>
-          </div>
-          <form className="justify-items-center">
-            <div className="bg-[#eac2c37d] md:w-2xl mx-auto border-[#CC323A] border-2 rounded-md p-4 mt-1 space-y-2 shadow-lg shadow-gray-500">
-            <div>
-            <label for="clientname" className="text-[#CC323A]">Your Name</label>
-            <input type="text" id="clientname" name="clientname" placeholder="Lawrence Ekpenyong" required className="w-full h-8 rounded-lg bg-white/80 focus:outline-none focus:ring-2 focus:ring-[#CC323A] px-2"/>
-            </div>
-            <div >
-            <label for="number" className="text-[#CC323A]">Phone or WhatsApp</label>
-            <input type="tel" id="number" name="number" placeholder="+234-806-042-9434" required className=" w-full h-8 rounded-lg bg-white/80 focus:outline-none focus:ring-2 focus:ring-[#CC323A] px-2"/>
-            </div>
-            <div >
-            <label for="email" className="text-[#CC323A]">Email</label>
-            <input type="email" id="email" name="email"  placeholder="you@example.com" required className="w-full h-8 rounded-lg bg-white/80 focus:outline-none focus:ring-2 focus:ring-[#CC323A] px-2"/>
-            </div>
-            <div >
-            <label for="message" className="text-[#CC323A]">Describe your Project</label>
-            <textarea type="message" id="message" name="message" required className="w-full h-26 rounded-lg bg-white/80 focus:outline-none focus:ring-2 focus:ring-[#CC323A] px-2 resize-none"/>
-            </div>
-
-            <div className="flex gap-x-2 justify-end">
-            <div className="bg-[#CC323A] text-white border-2 p-2 rounded-xl w-[69.53px] text-center">
-             <input type="reset" value="Clear"/>
-            </div>
-            <div className="bg-white border-2 border-[#CC323A] p-2 rounded-xl w-[118.61px] text-center">
-             <input type="submit" value="Send Inquiry"/>
-            </div>
-            </div>
-            </div>
-          </form>
-        </div>
-      </section>
     </>
   );
 };
