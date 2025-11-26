@@ -36,7 +36,7 @@ const Contact = () => {
     setStatus('submitting');
 
     try {
-      const response = await fetch('', {
+      const response = await fetch('https://larr-medas.onrender.com/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
