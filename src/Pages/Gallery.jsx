@@ -11,7 +11,7 @@ const Gallery = () => {
   React.useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch('https://larr-medas.onrender.com/api/projects');
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/projects`);
         if (!response.ok) {
           throw new Error('Failed to fetch projects');
         }

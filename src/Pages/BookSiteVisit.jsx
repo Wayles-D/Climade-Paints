@@ -26,7 +26,7 @@ const BookSiteVisit = () => {
     setStatus("submitting");
 
     try {
-      const response = await fetch("https://larr-medas.onrender.com/api/site-visits", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/site-visits`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
