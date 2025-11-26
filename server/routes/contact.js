@@ -67,10 +67,13 @@ router.post("/", async (req, res) => {
             `,
     };
 
-    // Send both emails
-    await transporter.sendMail(adminMailOptions);
-    await transporter.sendMail(userMailOptions);
+    // Send emails in background (don't await)
+    Promise.all([
+      transporter.sendMail(adminMailOptions),
+      transporter.sendMail(userMailOptions),
+    ]).catch((err) => console.error("Background email sending failed:", err));
 
+    // Respond immediately
     res.status(200).json({ message: "Contact form submitted successfully" });
   } catch (error) {
     console.error("Error processing contact form:", error);
