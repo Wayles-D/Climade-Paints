@@ -6,13 +6,21 @@ const nodemailer = require("nodemailer");
 // Configure Nodemailer Transporter
 // You should use environment variables for these credentials
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false, // use false for STARTTLS; true for 465
+  service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
+  family: 4, // Force IPv4
+});
+
+// Verify connection configuration
+transporter.verify(function (error, success) {
+  if (error) {
+    console.log("SiteVisit Transporter Error:", error);
+  } else {
+    console.log("SiteVisit Transporter is ready to send emails");
+  }
 });
 
 // POST a new site visit request

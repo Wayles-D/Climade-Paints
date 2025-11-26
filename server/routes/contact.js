@@ -4,13 +4,21 @@ const nodemailer = require("nodemailer");
 
 // Create email transporter
 const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false, // use false for STARTTLS; true for 465
+  service: "gmail",
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
   },
+  family: 4, // Force IPv4
+});
+
+// Verify connection configuration
+transporter.verify(function (error, success) {
+  if (error) {
+    console.log("Contact Transporter Error:", error);
+  } else {
+    console.log("Contact Transporter is ready to send emails");
+  }
 });
 
 // POST /api/contact - Handle contact form submissions
