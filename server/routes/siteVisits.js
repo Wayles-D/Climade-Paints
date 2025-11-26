@@ -6,7 +6,9 @@ const nodemailer = require("nodemailer");
 // Configure Nodemailer Transporter
 // You should use environment variables for these credentials
 const transporter = nodemailer.createTransport({
-  service: "gmail", // or your preferred email service
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true, // use SSL
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASS,
