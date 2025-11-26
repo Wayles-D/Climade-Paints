@@ -51,7 +51,7 @@ router.post("/", async (req, res) => {
     const userMailOptions = {
       from: process.env.EMAIL_USER,
       to: email,
-      subject: "Thank you for contacting Climade Paints",
+      subject: "Thank you for contacting Larr Medas Decorations",
       html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
                     <h2 style="color: #CC323A;">Thank You for Contacting Us!</h2>
@@ -62,7 +62,7 @@ router.post("/", async (req, res) => {
                         <p style="white-space: pre-wrap;">${message}</p>
                     </div>
                     <p>If you need immediate assistance, please call us at <strong>+1 (555) 123-4567</strong> or reach out via WhatsApp.</p>
-                    <p>Best regards,<br>The Climade Paints Team</p>
+                    <p>Best regards,<br>The Larr Medas DecorationsTeam</p>
                 </div>
             `,
     };

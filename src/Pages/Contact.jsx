@@ -36,7 +36,7 @@ const Contact = () => {
     setStatus('submitting');
 
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ const Contact = () => {
   };
 
   const handleWhatsApp = () => {
-    const whatsappNumber = '1234567890'; // Replace with actual number
+    const whatsappNumber = '2348060429434';
     const message = 'Hello! I would like to get in touch regarding your painting services.';
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -115,7 +115,7 @@ const Contact = () => {
             <h3 className="text-lg font-bold text-gray-900 mb-2">Phone</h3>
             <p className="text-gray-600 mb-3">Mon-Fri from 8am to 6pm</p>
             <a href="tel:+15551234567" className="text-[#CC323A] font-semibold hover:underline">
-              +1 (555) 123-4567
+              +234 (808) 9721063
             </a>
           </div>
 
@@ -126,7 +126,7 @@ const Contact = () => {
             <h3 className="text-lg font-bold text-gray-900 mb-2">Email</h3>
             <p className="text-gray-600 mb-3">We'll respond within 24 hours</p>
             <a href="mailto:contact@climadepaints.com" className="text-[#CC323A] font-semibold hover:underline">
-              contact@climadepaints.com
+              contact@larrmedasdecor.com
             </a>
           </div>
 
@@ -274,7 +274,7 @@ const Contact = () => {
                   <MapPin className="w-6 h-6 text-[#CC323A] mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-gray-900">Address</h3>
-                    <p className="text-gray-600">123 Paint Street, Color City, ST 12345</p>
+                    <p className="text-gray-600">21, Ajibola Cresent, Alapere, Ketu, Lagos State, Nigeria</p>
                   </div>
                 </div>
 
@@ -293,7 +293,7 @@ const Contact = () => {
               <div className="w-full h-64 bg-gray-200 rounded-xl overflow-hidden">
                 <iframe
                   title="Location Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.1841374555115!2d-73.98823492346667!3d40.75797097138558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4939045571837!2d3.3984214739931615!3d6.585359922443467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b92be4c88f473%3A0x2f86428ba6c59cf5!2sLarr%20Medas%20Decoration!5e0!3m2!1sen!2sng!4v1764166720070!5m2!1sen!2sng"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

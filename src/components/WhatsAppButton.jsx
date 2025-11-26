@@ -16,7 +16,7 @@ const WhatsAppButton = () => {
   const [isOpen, setIsOpen] = useState(false);
   
   // Replace with your actual WhatsApp business number (include country code without + or spaces)
-  const whatsappNumber = '1234567890'; // e.g., '1234567890' for US number
+  const whatsappNumber = '2348060429434'; // e.g., '1234567890' for US number
   const defaultMessage = 'Hello! I would like to inquire about your painting services.';
   
   const handleWhatsAppClick = () => {

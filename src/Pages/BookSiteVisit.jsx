@@ -96,7 +96,7 @@ const BookSiteVisit = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold">Phone</h3>
-                  <p className="text-red-100">+1 (555) 123-4567</p>
+                  <p className="text-red-100">+234 (806) 042 9434</p>
                 </div>
               </div>
               
@@ -106,7 +106,7 @@ const BookSiteVisit = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold">Email</h3>
-                  <p className="text-red-100">contact@climadepaints.com</p>
+                  <p className="text-red-100">contact@larrmedasdecor.com</p>
                 </div>
               </div>
               
@@ -116,7 +116,7 @@ const BookSiteVisit = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold">Location</h3>
-                  <p className="text-red-100">123 Paint Street, Color City</p>
+                  <p className="text-red-100">21, Ajibola Cresent, Alapere, Ketu, Lagos</p>
                 </div>
               </div>
             </div>
@@ -181,7 +181,7 @@ const BookSiteVisit = () => {
                     id="phone"
                     required
                     className="focus:ring-red-500 focus:border-red-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md p-3 border"
-                    placeholder="(555) 987-6543"
+                    placeholder="08089721063"
                     value={formData.phone}
                     onChange={handleChange}
                   />
