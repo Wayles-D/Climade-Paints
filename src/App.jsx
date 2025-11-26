@@ -8,7 +8,6 @@ import Services from "./Pages/Services";
 import Materials from "./Pages/Materials";
 import Gallery from "./Pages/Gallery";
 import Contact from "./Pages/Contact";
-import Quote from "./Pages/Quote";
 import BookSiteVisit from "./Pages/BookSiteVisit";
 
 const App = () => {
