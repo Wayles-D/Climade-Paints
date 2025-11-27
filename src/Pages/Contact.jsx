@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Clock, CheckCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../emailjs-config';
 
 // Official WhatsApp Icon Component
 const WhatsAppIcon = ({ className = "w-5 h-5" }) => (
@@ -36,28 +38,69 @@ const Contact = () => {
     setStatus('submitting');
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      // 1. Send Email to Admin
+      const adminEmailPromise = emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          reply_to: formData.email,
         },
-        body: JSON.stringify(formData),
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      // 2. Send Confirmation Email to User
+      const userConfirmationPromise = emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.CONFIRMATION_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          reply_to: 'contact@larrmedasdecor.com',
+        },
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      // Wait for both emails to be sent (in parallel)
+      await Promise.all([adminEmailPromise, userConfirmationPromise]);
+
+      // If emails succeed, we consider it a success for the user
+      setStatus('success');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
       });
 
-      if (response.ok) {
-        setStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: ''
+      // 3. Save to Database (Backend) - Non-blocking
+      try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/contact`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
         });
-      } else {
-        setStatus('error');
+
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Backend DB Error:", errorData);
+        }
+      } catch (dbError) {
+        console.error("Backend Connection Error:", dbError);
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
+
+    } catch (emailError) {
+      console.error('EmailJS Error:', emailError);
       setStatus('error');
     }
   };

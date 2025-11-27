@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { CheckCircle, Send, Calendar, User, Mail, Phone, MapPin, MessageSquare } from "lucide-react";
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../emailjs-config';
 
 const BookSiteVisit = () => {
   const [formData, setFormData] = useState({
@@ -26,29 +28,70 @@ const BookSiteVisit = () => {
     setStatus("submitting");
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/site-visits`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      // 1. Send Email to Admin
+      const adminEmailPromise = emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: "New Site Visit Request",
+          message: `Address: ${formData.address}\nPreferred Date: ${formData.preferredDate}\n\nMessage: ${formData.message}`,
+          reply_to: formData.email,
         },
-        body: JSON.stringify(formData),
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      // 2. Send Confirmation Email to User
+      const userConfirmationPromise = emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.CONFIRMATION_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: "Site Visit Request Received",
+          message: `We have received your request for a site visit at ${formData.address} on ${formData.preferredDate}.\n\nOur team will review your request and contact you shortly to confirm the details.`,
+          reply_to: 'contact@larrmedasdecor.com',
+        },
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      // Wait for both emails
+      await Promise.all([adminEmailPromise, userConfirmationPromise]);
+
+      // If email succeeds, we consider it a success for the user
+      setStatus("success");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        address: "",
+        preferredDate: "",
+        message: "",
       });
 
-      if (response.ok) {
-        setStatus("success");
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          address: "",
-          preferredDate: "",
-          message: "",
+      // 2. Save to Database (Backend) - Non-blocking
+      try {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/site-visits`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
         });
-      } else {
-        setStatus("error");
+        
+        if (!response.ok) {
+            const errorData = await response.json();
+            console.error("Backend DB Error:", errorData);
+        }
+      } catch (dbError) {
+        console.error("Backend Connection Error:", dbError);
       }
-    } catch (error) {
-      console.error("Error submitting form:", error);
+
+    } catch (emailError) {
+      console.error("EmailJS Error:", emailError);
       setStatus("error");
     }
   };
@@ -189,7 +232,7 @@ const BookSiteVisit = () => {
               </div>
 
               <div>
-                <label htmlFor="preferredDate" className="block text-sm font-medium text-gray-700">Preferred Date</label>
+                <label htmlFor="date" className="block text-sm font-medium text-gray-700">Preferred Date</label>
                 <div className="mt-1 relative rounded-md shadow-sm">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <Calendar className="h-5 w-5 text-gray-400" />
@@ -197,7 +240,7 @@ const BookSiteVisit = () => {
                   <input
                     type="date"
                     name="preferredDate"
-                    id="preferredDate"
+                    id="date"
                     required
                     className="focus:ring-red-500 focus:border-red-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md p-3 border"
                     value={formData.preferredDate}
@@ -219,7 +262,7 @@ const BookSiteVisit = () => {
                   id="address"
                   required
                   className="focus:ring-red-500 focus:border-red-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md p-3 border"
-                  placeholder="123 Main St, Apt 4B"
+                  placeholder="123 Main St, Lagos"
                   value={formData.address}
                   onChange={handleChange}
                 />
@@ -229,7 +272,7 @@ const BookSiteVisit = () => {
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-700">Additional Details</label>
               <div className="mt-1 relative rounded-md shadow-sm">
-                <div className="absolute inset-y-0 left-0 pl-3 pt-3 pointer-events-none">
+                <div className="absolute top-3 left-0 pl-3 flex items-center pointer-events-none">
                   <MessageSquare className="h-5 w-5 text-gray-400" />
                 </div>
                 <textarea
@@ -237,38 +280,38 @@ const BookSiteVisit = () => {
                   id="message"
                   rows="4"
                   className="focus:ring-red-500 focus:border-red-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md p-3 border"
-                  placeholder="Tell us about your project..."
+                  placeholder="Tell us about your project requirements..."
                   value={formData.message}
                   onChange={handleChange}
                 ></textarea>
               </div>
             </div>
 
-            <div>
-              <button
-                type="submit"
-                disabled={status === "submitting"}
-                className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#CC323A] hover:bg-[#a8282f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-all duration-200 ${status === "submitting" ? "opacity-75 cursor-not-allowed" : ""}`}
-              >
-                {status === "submitting" ? (
-                  <span className="flex items-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Sending...
-                  </span>
-                ) : (
-                  <span className="flex items-center">
-                    Book Site Visit <Send className="ml-2 h-4 w-4" />
-                  </span>
-                )}
-              </button>
-            </div>
-            
+            <button
+              type="submit"
+              disabled={status === "submitting"}
+              className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#CC323A] hover:bg-[#a8282f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors duration-200 ${
+                status === "submitting" ? "opacity-75 cursor-not-allowed" : ""
+              }`}
+            >
+              {status === "submitting" ? (
+                <span className="flex items-center">
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Submitting Request...
+                </span>
+              ) : (
+                <span className="flex items-center">
+                  Book Site Visit <Send className="ml-2 h-4 w-4" />
+                </span>
+              )}
+            </button>
+
             {status === "error" && (
-              <div className="text-red-600 text-center text-sm mt-2">
-                Something went wrong. Please try again later.
+              <div className="text-red-600 text-center text-sm">
+                Something went wrong. Please try again or contact us via WhatsApp.
               </div>
             )}
           </form>
