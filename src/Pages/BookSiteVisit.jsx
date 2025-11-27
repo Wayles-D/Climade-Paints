@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { CheckCircle, Send, Calendar, User, Mail, Phone, MapPin, MessageSquare } from "lucide-react";
-import emailjs from '@emailjs/browser';
-import { EMAILJS_CONFIG } from '../emailjs-config';
 
 const BookSiteVisit = () => {
   const [formData, setFormData] = useState({
@@ -28,70 +26,31 @@ const BookSiteVisit = () => {
     setStatus("submitting");
 
     try {
-      // 1. Send Email to Admin
-      const adminEmailPromise = emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.TEMPLATE_ID,
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          subject: "New Site Visit Request",
-          message: `Address: ${formData.address}\nPreferred Date: ${formData.preferredDate}\n\nMessage: ${formData.message}`,
-          reply_to: formData.email,
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/site-visits`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        EMAILJS_CONFIG.PUBLIC_KEY
-      );
-
-      // 2. Send Confirmation Email to User
-      const userConfirmationPromise = emailjs.send(
-        EMAILJS_CONFIG.SERVICE_ID,
-        EMAILJS_CONFIG.CONFIRMATION_TEMPLATE_ID,
-        {
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          subject: "Site Visit Request Received",
-          message: `We have received your request for a site visit at ${formData.address} on ${formData.preferredDate}.\n\nOur team will review your request and contact you shortly to confirm the details.`,
-          reply_to: 'contact@larrmedasdecor.com',
-        },
-        EMAILJS_CONFIG.PUBLIC_KEY
-      );
-
-      // Wait for both emails
-      await Promise.all([adminEmailPromise, userConfirmationPromise]);
-
-      // If email succeeds, we consider it a success for the user
-      setStatus("success");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        address: "",
-        preferredDate: "",
-        message: "",
+        body: JSON.stringify(formData),
       });
-
-      // 2. Save to Database (Backend) - Non-blocking
-      try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/site-visits`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(formData),
+      
+      if (response.ok) {
+        setStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          address: "",
+          preferredDate: "",
+          message: "",
         });
-        
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.error("Backend DB Error:", errorData);
-        }
-      } catch (dbError) {
-        console.error("Backend Connection Error:", dbError);
+      } else {
+        const errorData = await response.json();
+        console.error("Backend Error:", errorData);
+        setStatus("error");
       }
-
-    } catch (emailError) {
-      console.error("EmailJS Error:", emailError);
+    } catch (error) {
+      console.error("Connection Error:", error);
       setStatus("error");
     }
   };
