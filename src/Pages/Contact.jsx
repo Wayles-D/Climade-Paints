@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Clock, CheckCircle } from 'lucide-react';
+import SEO from '../components/SEO';
 
 // Official WhatsApp Icon Component
 const WhatsAppIcon = ({ className = "w-5 h-5" }) => (
@@ -96,234 +97,242 @@ const Contact = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
-            Get In Touch
-          </h1>
-          <p className="mt-4 text-xl text-gray-600">
-            We'd love to hear from you. Choose your preferred way to reach out.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-          {/* Contact Info Cards */}
-          <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-            <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-              <Phone className="w-7 h-7 text-blue-600" />
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Phone</h3>
-            <p className="text-gray-600 mb-3">Mon-Fri from 8am to 6pm</p>
-            <a href="tel:+15551234567" className="text-[#CC323A] font-semibold hover:underline">
-              +234 (808) 9721063
-            </a>
+    <>
+      <SEO 
+        title="Contact Us - Get In Touch"
+        description="Contact Larr Medas Decorations for professional painting services. Reach us by phone, email, or WhatsApp. We respond within 24 hours."
+        keywords="contact us, painting company contact, get quote, painting consultation, Lagos painters contact"
+        canonical="https://www.larrmedas.com/Contact"
+      />
+      <div className="min-h-screen bg-gray-50 py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl">
+              Get In Touch
+            </h1>
+            <p className="mt-4 text-xl text-gray-600">
+              We'd love to hear from you. Choose your preferred way to reach out.
+            </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-            <div className="bg-red-100 w-14 h-14 rounded-full flex items-center justify-center mb-4">
-              <Mail className="w-7 h-7 text-red-600" />
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">Email</h3>
-            <p className="text-gray-600 mb-3">We'll respond within 24 hours</p>
-            <a href="mailto:contact@climadepaints.com" className="text-[#CC323A] font-semibold hover:underline">
-              contact@larrmedasdecor.com
-            </a>
-          </div>
-
-          <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-            <div className="bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center mb-4">
-              <WhatsAppIcon className="w-7 h-7 text-white" />
-            </div>
-            <h3 className="text-lg font-bold text-gray-900 mb-2">WhatsApp</h3>
-            <p className="text-gray-600 mb-3">Instant messaging available</p>
-            <button 
-              onClick={handleWhatsApp}
-              className="text-[#25D366] font-semibold hover:underline flex items-center space-x-1"
-            >
-              <span>Start Chat</span>
-              <WhatsAppIcon className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-
-        {/* Main Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Contact Form */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Full Name *
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
-                  placeholder="John Doe"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            {/* Contact Info Cards */}
+            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <Phone className="w-7 h-7 text-blue-600" />
               </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Phone</h3>
+              <p className="text-gray-600 mb-3">Mon-Fri from 8am to 6pm</p>
+              <a href="tel:+15551234567" className="text-[#CC323A] font-semibold hover:underline">
+                +234 (808) 9721063
+              </a>
+            </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-red-100 w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <Mail className="w-7 h-7 text-red-600" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Email</h3>
+              <p className="text-gray-600 mb-3">We'll respond within 24 hours</p>
+              <a href="mailto:contact@climadepaints.com" className="text-[#CC323A] font-semibold hover:underline">
+                contact@larrmedasdecor.com
+              </a>
+            </div>
+
+            <div className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <div className="bg-[#25D366] w-14 h-14 rounded-full flex items-center justify-center mb-4">
+                <WhatsAppIcon className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">WhatsApp</h3>
+              <p className="text-gray-600 mb-3">Instant messaging available</p>
+              <button 
+                onClick={handleWhatsApp}
+                className="text-[#25D366] font-semibold hover:underline flex items-center space-x-1"
+              >
+                <span>Start Chat</span>
+                <WhatsAppIcon className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+
+          {/* Main Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Contact Form */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 lg:p-10">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
+              
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+                    Full Name *
                   </label>
                   <input
-                    type="email"
-                    name="email"
-                    id="email"
+                    type="text"
+                    name="name"
+                    id="name"
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
-                    placeholder="john@example.com"
-                    value={formData.email}
+                    placeholder="John Doe"
+                    value={formData.name}
+                    onChange={handleChange}
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
+                      placeholder="john@example.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      id="phone"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
+                      placeholder="(555) 987-6543"
+                      value={formData.phone}
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                    Subject *
+                  </label>
+                  <input
+                    type="text"
+                    name="subject"
+                    id="subject"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
+                    placeholder="How can we help you?"
+                    value={formData.subject}
                     onChange={handleChange}
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                    Message *
                   </label>
-                  <input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
-                    placeholder="(555) 987-6543"
-                    value={formData.phone}
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="5"
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors resize-none"
+                    placeholder="Tell us more about your project or inquiry..."
+                    value={formData.message}
                     onChange={handleChange}
-                  />
+                  ></textarea>
                 </div>
-              </div>
 
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                  Subject *
-                </label>
-                <input
-                  type="text"
-                  name="subject"
-                  id="subject"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors"
-                  placeholder="How can we help you?"
-                  value={formData.subject}
-                  onChange={handleChange}
-                />
-              </div>
+                <button
+                  type="submit"
+                  disabled={status === 'submitting'}
+                  className={`w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#CC323A] hover:bg-[#a8282f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-all duration-200 ${
+                    status === 'submitting' ? 'opacity-75 cursor-not-allowed' : ''
+                  }`}
+                >
+                  {status === 'submitting' ? (
+                    <span className="flex items-center">
+                      <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Sending...
+                    </span>
+                  ) : (
+                    <span className="flex items-center">
+                      Send Message <Send className="ml-2 h-4 w-4" />
+                    </span>
+                  )}
+                </button>
 
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  rows="5"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500 transition-colors resize-none"
-                  placeholder="Tell us more about your project or inquiry..."
-                  value={formData.message}
-                  onChange={handleChange}
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                disabled={status === 'submitting'}
-                className={`w-full flex justify-center items-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-[#CC323A] hover:bg-[#a8282f] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-all duration-200 ${
-                  status === 'submitting' ? 'opacity-75 cursor-not-allowed' : ''
-                }`}
-              >
-                {status === 'submitting' ? (
-                  <span className="flex items-center">
-                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                    Sending...
-                  </span>
-                ) : (
-                  <span className="flex items-center">
-                    Send Message <Send className="ml-2 h-4 w-4" />
-                  </span>
+                {status === 'error' && (
+                  <div className="text-red-600 text-center text-sm">
+                    Something went wrong. Please try again or contact us via WhatsApp.
+                  </div>
                 )}
-              </button>
-
-              {status === 'error' && (
-                <div className="text-red-600 text-center text-sm">
-                  Something went wrong. Please try again or contact us via WhatsApp.
-                </div>
-              )}
-            </form>
-          </div>
-
-          {/* Map & Additional Info */}
-          <div className="space-y-8">
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Visit Our Office</h2>
-              
-              <div className="space-y-4 mb-6">
-                <div className="flex items-start space-x-4">
-                  <MapPin className="w-6 h-6 text-[#CC323A] mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Address</h3>
-                    <p className="text-gray-600">21, Ajibola Cresent, Alapere, Ketu, Lagos State, Nigeria</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <Clock className="w-6 h-6 text-[#CC323A] mt-1 flex-shrink-0" />
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Business Hours</h3>
-                    <p className="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM</p>
-                    <p className="text-gray-600">Saturday: 9:00 AM - 4:00 PM</p>
-                    <p className="text-gray-600">Sunday: Closed</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Map Placeholder */}
-              <div className="w-full h-64 bg-gray-200 rounded-xl overflow-hidden">
-                <iframe
-                  title="Location Map"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4939045571837!2d3.3984214739931615!3d6.585359922443467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b92be4c88f473%3A0x2f86428ba6c59cf5!2sLarr%20Medas%20Decoration!5e0!3m2!1sen!2sng!4v1764166720070!5m2!1sen!2sng"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </div>
+              </form>
             </div>
 
-            {/* Quick Links */}
-            <div className="bg-gradient-to-br from-[#CC323A] to-[#a8282f] rounded-2xl shadow-xl p-8 text-white">
-              <h2 className="text-2xl font-bold mb-4">Prefer Not to Fill Forms?</h2>
-              <p className="mb-6 text-red-100">
-                No problem! Reach out to us directly via WhatsApp for instant communication.
-              </p>
-              <button
-                onClick={handleWhatsApp}
-                className="w-full bg-white text-[#CC323A] font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center space-x-2"
-              >
-                <WhatsAppIcon className="w-5 h-5" />
-                <span>Chat on WhatsApp</span>
-              </button>
+            {/* Map & Additional Info */}
+            <div className="space-y-8">
+              <div className="bg-white rounded-2xl shadow-xl p-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-6">Visit Our Office</h2>
+                
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-start space-x-4">
+                    <MapPin className="w-6 h-6 text-[#CC323A] mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900">Address</h3>
+                      <p className="text-gray-600">21, Ajibola Cresent, Alapere, Ketu, Lagos State, Nigeria</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-4">
+                    <Clock className="w-6 h-6 text-[#CC323A] mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold text-gray-900">Business Hours</h3>
+                      <p className="text-gray-600">Monday - Friday: 8:00 AM - 6:00 PM</p>
+                      <p className="text-gray-600">Saturday: 9:00 AM - 4:00 PM</p>
+                      <p className="text-gray-600">Sunday: Closed</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Map Placeholder */}
+                <div className="w-full h-64 bg-gray-200 rounded-xl overflow-hidden">
+                  <iframe
+                    title="Location Map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.4939045571837!2d3.3984214739931615!3d6.585359922443467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b92be4c88f473%3A0x2f86428ba6c59cf5!2sLarr%20Medas%20Decoration!5e0!3m2!1sen!2sng!4v1764166720070!5m2!1sen!2sng"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
+              </div>
+
+              {/* Quick Links */}
+              <div className="bg-gradient-to-br from-[#CC323A] to-[#a8282f] rounded-2xl shadow-xl p-8 text-white">
+                <h2 className="text-2xl font-bold mb-4">Prefer Not to Fill Forms?</h2>
+                <p className="mb-6 text-red-100">
+                  No problem! Reach out to us directly via WhatsApp for instant communication.
+                </p>
+                <button
+                  onClick={handleWhatsApp}
+                  className="w-full bg-white text-[#CC323A] font-semibold py-3 px-6 rounded-lg hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center space-x-2"
+                >
+                  <WhatsAppIcon className="w-5 h-5" />
+                  <span>Chat on WhatsApp</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

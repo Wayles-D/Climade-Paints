@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 
 const Services = () => {
   useEffect(() => {
@@ -88,6 +89,12 @@ const Services = () => {
   ];
   return (
     <>
+      <SEO 
+        title="Painting Services - Interior & Exterior"
+        description="Professional interior, exterior, and commercial painting services. Expert prep, premium coatings, and clean finishes delivered on time."
+        keywords="painting services, interior painting, exterior painting, commercial painting, residential painting, professional painters"
+        canonical="https://www.larrmedas.com/Services"
+      />
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#dea8aa7d]">
         <div>
           {/* left Image */}

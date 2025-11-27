@@ -2,6 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import SEO from "../components/SEO";
 
 const About = () => {
   useEffect(() => {
@@ -53,6 +54,12 @@ const About = () => {
   ];
   return (
     <>
+      <SEO 
+        title="About Us - Professional Painting Company"
+        description="Learn about Larr Medas Decorations - 20+ years of experience, 1200+ projects completed, licensed and insured painting professionals."
+        keywords="about us, painting company, professional painters, licensed painters, insured painters, painting experience"
+        canonical="https://www.larrmedas.com/About"
+      />
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#dea8aa7d]">
         <div>
           {/* left Image */}

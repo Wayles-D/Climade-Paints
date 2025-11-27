@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "../components/SEO";
 
 const Material = () => {
   const materialListings = [
@@ -46,6 +47,12 @@ const Material = () => {
   ];
   return (
     <>
+      <SEO 
+        title="Premium Paints & Materials"
+        description="Browse our selection of contractor-grade paints, primers, tools, and accessories. Premium materials for lasting results."
+        keywords="paint materials, painting supplies, paint buckets, brushes, primers, painting tools, contractor supplies"
+        canonical="https://www.larrmedas.com/Materials"
+      />
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#de898c7d]">
         <div>
           {/* left Image */}

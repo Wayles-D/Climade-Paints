@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { CheckCircle, Send, Calendar, User, Mail, Phone, MapPin, MessageSquare } from "lucide-react";
+import SEO from "../components/SEO";
 
 const BookSiteVisit = () => {
   const [formData, setFormData] = useState({
@@ -80,6 +81,13 @@ const BookSiteVisit = () => {
   }
 
   return (
+    <>
+      <SEO 
+        title="Book a Site Visit - Free Consultation"
+        description="Schedule a free site visit with our painting experts. Get a professional assessment and precise quote for your painting project."
+        keywords="book site visit, painting consultation, free quote, site assessment, painting estimate, schedule visit"
+        canonical="https://www.larrmedas.com/book-site-visit"
+      />
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 flex flex-col justify-center sm:py-20">
       <div className="max-w-4xl w-full mx-auto bg-white shadow-2xl rounded-3xl overflow-hidden md:flex animate__animated animate__fadeInUp">
         
@@ -277,6 +285,7 @@ const BookSiteVisit = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
