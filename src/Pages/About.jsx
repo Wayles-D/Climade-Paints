@@ -1,5 +1,5 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import SEO from "../components/SEO";
@@ -103,8 +103,7 @@ const About = () => {
             {firstCardContents.map((texts) => (
               <div
                 key={texts.id}
-                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] space-y-2 shadow-gray-500 shadow-lg hover:scale-105 transition-transform duration-200
-"
+                className="border-2 rounded-lg px-2 py-2 border-[#e77d81e1] space-y-2 shadow-gray-500 shadow-lg hover:scale-105 transition-transform duration-200"
               >
                 <h1 className="poppins-black text-[#CC323A]">
                   {texts.cardTitle}
@@ -126,12 +125,11 @@ const About = () => {
             <h2>Proven delivery at scale.</h2>
           </div>
 
-          <div className=" mt-2 grid  grid-cols-1 md:grid-cols-3 gap-6 animate__animated animate__bounce">
+          <div className="mt-2 grid  grid-cols-1 md:grid-cols-3 gap-6">
             {byTheNumbersCard.map((byn) => (
               <div
                 key={byn.id}
-                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:scale-105 transition-transform duration-200
-"
+                className="border-2 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:scale-105 transition-transform duration-200"
               >
                 <h1 className="poppins-black text-[#CC323A]">
                   {byn.cardTitle}
@@ -158,8 +156,7 @@ const About = () => {
             {values.map((value) => (
               <div
                 key={value.id}
-                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:scale-105 transition-transform duration-200
-"
+                className="border-2 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:scale-105 transition-transform duration-200"
               >
                 <h1 className="poppins-black text-[#CC323A]">
                   {value.cardTitle}
@@ -170,18 +167,19 @@ const About = () => {
           </div>
         </div>
 
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/20 shadow-xl p-6 space-y-4">
-        <div className="space-y-1">
-          <h1 className="text-2xl poppins-bold text-[#CC323A]">Ready to plan your project?</h1>
-         
-        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/20 shadow-xl p-6 space-y-4 rounded-xl">
+            <div className="space-y-1">
+              <h2 className="text-2xl poppins-bold text-[#CC323A]">Ready to plan your project?</h2>
+            </div>
 
-        <div className="space-x-2 space-y-2">
-          <button className="text-white bg-[#CC323A] p-2 rounded-lg poppins-bold">Book a Site visit</button>
+            <div className="space-x-2 space-y-2">
+              <Link to="/book-site-visit" className="text-white bg-[#CC323A] p-2 rounded-lg poppins-bold inline-block hover:bg-[#b02a32] transition-colors">
+                Book a Site visit
+              </Link>
+            </div>
+          </div>
         </div>
-        </div>
-        </section>
 
       </section>
     </>
