@@ -73,12 +73,10 @@ const Gallery = () => {
             />
             <div className="md:my-auto md:h-[200px]  md:w-[602.8px] sm:space-y-2  md:animate__animated md:animate__backInRight">
               <h1 className="inter-bold text-2xl sm:text-3xl lg:text-4xl mt-2 lg:mt-0 text-[#CC323A] lg:w-[541.88px]">
-                Premium Paints & Materials, Expertly Supplied
+                Project Gallery
               </h1>
               <p className="lora-normal text-base font-bold lg:w-[433.23px]">
-                We’re specialists in both painting and supply. Explore
-                contractor-grade paints, primers, tools, and
-                accessories—handpicked for lasting results.
+                Curated residential and commercial finishes. Explore before-and-afters, materials, and color stories.
               </p>
             </div>
           </div>
