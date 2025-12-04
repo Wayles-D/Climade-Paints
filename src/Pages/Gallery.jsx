@@ -75,8 +75,8 @@ const Gallery = () => {
               <h1 className="inter-bold text-2xl sm:text-3xl lg:text-4xl mt-2 lg:mt-0 text-[#CC323A] lg:w-[541.88px]">
                 Project Gallery
               </h1>
-              <p className="lora-normal text-base font-bold lg:w-[433.23px]">
-                Curated residential and commercial finishes. Explore before-and-afters, materials, and color stories.
+              <p className="lora-normal text-base font-bold lg:w-[500px]">
+                Dive into our curated collection of residential and commercial finishes. Witness the transformation in our before-and-after showcases, explore our premium materials, and get inspired by the unique color stories that bring our projects to life.
               </p>
             </div>
           </div>
