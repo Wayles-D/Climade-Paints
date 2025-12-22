@@ -83,7 +83,7 @@ const FeaturedProjects = () => {
               See Full Portfolio
             </button>
             </Link>
-            <Link to={'/Quote'}>
+            <Link to={'/book-site-visit'}>
             <button className="px-6 py-2 rounded-lg bg-[#F2F5F4] text-[#0B4D91] font-semibold shadow border border-[#E6E8EA] hover:bg-[#e6e8ea]">
               Book a Site Visit
             </button>
