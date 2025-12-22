@@ -60,7 +60,7 @@ const Gallery = () => {
         title="Project Gallery - Our Work"
         description="Browse our portfolio of completed painting projects. View interior, exterior, and commercial painting work by Larr Medas Decorations."
         keywords="painting gallery, project portfolio, completed projects, interior painting examples, exterior painting examples, commercial painting"
-        canonical="https://www.larrmedas.com/Gallery"
+        canonical="https://www.larrmedasdecorations.com/Gallery"
       />
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 justify-items-center bg-[#de898c7d]">
         <div>
