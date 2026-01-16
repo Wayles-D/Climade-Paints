@@ -6,7 +6,7 @@ const Hero = () => {
   // Define slider content
   const heroSlides = [
     {
-      image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=2070&auto=format&fit=crop",
+      image: "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1768586389/7494d65b-9d07-4fea-852d-2d8fc9ed23e8.png",
       tag: "Professional Service",
       title: "Premium Residential & Commercial Painting",
       description: "Trusted, professional craftsmanship with meticulous prep, clean lines, and durable finishes. Serving homes and businesses with a corporate-level experience.",
