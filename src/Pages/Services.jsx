@@ -248,7 +248,7 @@ const Services = () => {
 
             <div className="space-x-2 space-y-2">
               <button className="text-white bg-[#CC323A] border-white border-2 border-rounded p-2 rounded-lg poppins-bold">
-                Book a Site visit
+                Send us a message
               </button>
             </div>
           </div>
