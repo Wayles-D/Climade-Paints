@@ -89,7 +89,7 @@ const Services = () => {
   ];
   return (
     <>
-      <SEO 
+      <SEO
         title="Painting Services - Interior & Exterior"
         description="Professional interior, exterior, and commercial painting services. Expert prep, premium coatings, and clean finishes delivered on time."
         keywords="painting services, interior painting, exterior painting, commercial painting, residential painting, professional painters"
@@ -138,7 +138,7 @@ const Services = () => {
 "
               >
                 <div className="flex gap-x-1">
-                  <img src={wwdCard.icon} alt="" className="text-[#CC323A]"/>
+                  <img src={wwdCard.icon} alt="" className="text-[#CC323A]" />
                   <h1 className="font-bold text-[#CC323A]">
                     {wwdCard.cardTitle}
                   </h1>
@@ -160,7 +160,10 @@ const Services = () => {
         </div>
 
         <section className="px-4 sm:px-6 lg:px-8 py-20">
-          <div data-aos="fade-up" className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/60 shadow-xl p-6 space-y-4 border-[#CC323A] border-2">
+          <div
+            data-aos="fade-up"
+            className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/60 shadow-xl p-6 space-y-4 border-[#CC323A] border-2"
+          >
             <div className="space-y-1">
               <h1 className="text-2xl poppins-bold text-[#CC323A]">
                 We don't just Paint — we also supply painting Materials.
@@ -173,9 +176,9 @@ const Services = () => {
 
             <div>
               <Link to={"/Materials"}>
-              <button className="text-white bg-[#CC323A] p-2 rounded-lg poppins-bold">
-                View Materials
-              </button>
+                <button className="text-white bg-[#CC323A] p-2 rounded-lg poppins-bold">
+                  View Materials
+                </button>
               </Link>
             </div>
           </div>
@@ -183,19 +186,23 @@ const Services = () => {
 
         <section className=" md:flex gap-2 justify-between space-y-3 md:space-y-0">
           {planningCards.map((card) => (
-              <div data-aos="fade-up" key={card.id} className="w-full border-2 border-[#CC323A] border-rounded p-2 rounded-lg bg-white/60">
-                <h1 className="text-[#CC323A] font-bold">{card.cardTitle}</h1>
-                <div>
-                  {card.cardTexts.map((text, textIndex) => (
-                    <div key={textIndex} className="flex space-x-2">
-                      <img src={card.cardIcon} alt="checkmark-icon"/>
-                      <div>
-                        <p className="text-xs">{text}</p>
-                      </div>
+            <div
+              data-aos="fade-up"
+              key={card.id}
+              className="w-full border-2 border-[#CC323A] border-rounded p-2 rounded-lg bg-white/60"
+            >
+              <h1 className="text-[#CC323A] font-bold">{card.cardTitle}</h1>
+              <div>
+                {card.cardTexts.map((text, textIndex) => (
+                  <div key={textIndex} className="flex space-x-2">
+                    <img src={card.cardIcon} alt="checkmark-icon" />
+                    <div>
+                      <p className="text-xs">{text}</p>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
+            </div>
           ))}
         </section>
       </section>
@@ -210,12 +217,11 @@ const Services = () => {
             <h2>Structured steps to deliver a clean, reliable finish.</h2>
           </div>
 
-          <div className=" mt-2 grid  grid-cols-1 md:grid-cols-4 gap-6 animate__animated animate__bounce">
+          <div className=" mt-2 grid  grid-cols-1 md:grid-cols-4 gap-6">
             {ourProcessCard.map((processCard) => (
               <div
                 key={processCard.id}
-                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:scale-105 transition-transform duration-200
-"
+                className="border-3 rounded-lg px-2 py-2 border-[#e77d81e1] shadow-gray-500 shadow-lg hover:scale-105 transition-transform duration-200"
               >
                 <h6 className="text-[#CC323A] font-bold">{processCard.no}</h6>
                 <h1 className="poppins-black text-[#CC323A]">
@@ -230,7 +236,10 @@ const Services = () => {
         </div>
 
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div data-aos="zoom-in" className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/20 shadow-xl p-6 space-y-4">
+          <div
+            data-aos="zoom-in"
+            className="md:flex items-center md:justify-between backdrop-blur-xl bg-white/20 shadow-xl p-6 space-y-4"
+          >
             <div className="space-y-1">
               <h1 className="text-2xl poppins-bold text-[#CC323A]">
                 Tell us about your project
@@ -238,7 +247,6 @@ const Services = () => {
             </div>
 
             <div className="space-x-2 space-y-2">
-              
               <button className="text-white bg-[#CC323A] border-white border-2 border-rounded p-2 rounded-lg poppins-bold">
                 Book a Site visit
               </button>
