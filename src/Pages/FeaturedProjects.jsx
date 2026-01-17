@@ -16,18 +16,18 @@ const FeaturedProjects = () => {
       id: 1,
       tag: "Modern Home Exterior",
       beforeImage:
-        "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1760106311/IMG-20251010-WA0016_pe0dnn.jpg",
+      "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1768636314/8938e819-15e7-46d1-bafa-01a12c020da7.png",
       afterImage:
-        "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1760106282/IMG-20251010-WA0002_lx2nbe.jpg",
+      "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1768636358/e33cedba-41af-4ae0-9806-e5da4de654e8.png",
     },
-
+    
     {
       id: 2,
       tag: "Living Room Refresh",
       beforeImage:
-      "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1760106300/IMG-20251010-WA0012_xq7apl.jpg",
+      "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1768636145/c119c499-f5dc-468c-bc68-c324724ddc51.png",
       afterImage:
-      "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1760106282/IMG-20251010-WA0003_sc28up.jpg",
+      "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1768636134/29ff6053-a9de-4869-8a4b-2b3baf7d093f.png",
     },
   ];
   return (
