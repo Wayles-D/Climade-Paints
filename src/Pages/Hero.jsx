@@ -6,7 +6,7 @@ const Hero = () => {
   // Define slider content
   const heroSlides = [
     {
-      image: "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1768586389/7494d65b-9d07-4fea-852d-2d8fc9ed23e8.png",
+      image: "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1768635839/e0ba3863-018f-4191-bbd3-116a1c771308.png",
       tag: "Professional Service",
       title: "Premium Residential & Commercial Painting",
       description: "Trusted, professional craftsmanship with meticulous prep, clean lines, and durable finishes. Serving homes and businesses with a corporate-level experience.",
@@ -18,7 +18,7 @@ const Hero = () => {
       description: "20+ years of experience delivering stunning results. From consultation to final coat, we bring your vision to life with precision and care.",
     },
     {
-      image: "https://images.unsplash.com/photo-1599619351208-3e6906b5c9d0?q=80&w=2072&auto=format&fit=crop",
+      image: "https://res.cloudinary.com/dmb5ggmvg/image/upload/v1768635822/c994ff64-6cce-4f49-a713-9b35a177be68.png",
       tag: "Quality Guaranteed",
       title: "Durable Finishes That Last",
       description: "Using premium materials and proven techniques, we ensure your paint job stands the test of time. Fully insured with background-checked crews.",
