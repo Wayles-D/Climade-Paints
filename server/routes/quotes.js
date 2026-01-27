@@ -117,7 +117,12 @@ router.post("/", async (req, res) => {
                             <li>Our team will review your project details</li>
                             <li>We'll prepare a comprehensive quote</li>
                             <li>You'll receive a detailed estimate via email</li>
-                            <li>We can schedule a site visit if needed</li>
+                            <li>We can schedule a sit <div className="text-center">
+            <h1 className="poppins-black text-2xl text-[#CC323A]">
+              What We Do
+            </h1>
+            <h2>Core offerings tailored to your property and schedule.</h2>
+          </div>e visit if needed</li>
                         </ol>
                     </div>
 
